@@ -12,7 +12,7 @@ import my_app.source.views_categories as category_view
 @my_view.route('/')
 @my_view.route('/home')
 def homePage():
-    return render_template('navbar.html')
+    return render_template('home.html')
 
 # ========================================================
 # ----------------- SHOW ALL PRODUCTS --------------------
