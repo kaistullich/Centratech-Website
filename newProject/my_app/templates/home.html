@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Centratech</title>
+<link rel="stylesheet" type="text/css" href="{{url_for('static' , filename='css/home.css')}}">
+<body>
+<header>
+    <h1>Centratech Electronics</h1>
+</header>
+
+<!-- ########## NAV BAR OPTIONS ############# -->
+<ul>
+    <li><a href="http://127.0.0.1:5000/products">Products</a></li>
+    <li><a href="http://127.0.0.1:5000/categories">Categories</a></li>
+    <li><a href="#">Customer Service</a></li>
+    <li><a href="#">About Centratech</a></li>
+    <li><a href="#">Login Page</a></li>
+    <select name="name">
+        <option value="">All Categories</option>
+        <option value="name">Name</option>
+        <option value="brand">Brand</option>
+        <option value="price">Price</option>
+        <option value="category">Category</option>
+        <option value="year">Year</option>
+        <option value="rating">Rating</option>
+    </select><br>
+    <form action="http://127.0.0.1:5000/search" method="GET">
+        <input type="text" name = "name" placeholder="Search by Product Name">
+    </form>
+</ul>
+
+<!-- ##########  SLIDESHOW  #############-->
+
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <img src="http://zdnet1.cbsistatic.com/hub/i/2016/11/07/f2fafebf-2442-4cf1-9d48-d71fcc48a4ae/6b69e3ef899dd4feef43c63b2f9e195b/macbook-pro-13-header2.jpg" 
+        style="width:480px; height:300px;">
+        <div class="text">Apple Macbook Pro</div>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/71tiAIUkggL._SL1322_.jpg"
+        style="width:480px; height:300px;">
+        <div class="text">Acer Aspire</div>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="http://images10.newegg.com/ProductImageCompressAll300/34-233-175-07.jpg"
+        style="width:480px; height:300px;">
+        <div class="text">Gigabyte Laptop</div>
+    </div>
+    
+     <div class="mySlides fade">
+        <img src="http://3.bp.blogspot.com/-IuMXastfEeg/UYOUsLQfzjI/AAAAAAAAAzA/g4MrZRhmVgo/s1600/Dell+Inspiron+3521.jpg"
+        style="width:480px; height:300px;">
+        <div class="text">Dell Inspiron</div>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="http://www.notebookcheck.net/uploads/tx_nbc2/design_unibody2_20101020_01.png"
+        style="width:480px; height:300px;">
+        <div class="text">Apple Macbook Air</div>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="https://shop.usa.canon.com/wcsstore/ExtendedSitesCatalogAssetStore/34688_1_xl.jpg"
+        style="width:480px; height:300px;">
+        <div class="text">Canon EOS Rebel</div>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="http://cdn-4.nikon-cdn.com/e/Q5NM96RZZo-YRYNeYvAi9beHK4x3L-8joW7yUnybX4TCMkFk-mOrm-nraMSB68suimClsSfnK7sEK7urtYpz1Q==/Views/1544_D5500_left.png"
+        style="width:480px; height:300px;">
+        <div class="text">Nikon D5500</div>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="http://www.newsshooter.com/wp-content/uploads/2016/02/EOS-80D-EF-S-18-55mm-IS-STM-LCD-Open-FSL.jpg"
+        style="width:480px; height:300px;">
+        <div class="text">Canon EOS 80D</div>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="https://phillipreeve.net/blog/wp-content/uploads/2015/06/sony_alpha-7r-ii-_05.jpg"
+        style="width:480px; height:300px;">
+        <div class="text">Sony Alpha a77 II</div>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="http://www.kenrockwell.com/canon/6d/D3S_9085-left-1200.jpg"
+        style="width:480px; height:300px;">
+        <div class="text">Canon EOS 6D</div>
+    </div>
+</div>
+<br>
+
+<div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+<script src="{{ url_for('static', filename='js/slideshow.js') }}"></script>
+<footer>Prices and offers are subject to change. © Cenratech Electronics</footer>
+</body>

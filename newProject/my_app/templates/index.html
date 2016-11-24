@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kai Stullich</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+	<!-- My OWN stylesheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/boostrap-theme.css') }}">
+
+</head>
+<body>
+	<header class="navbar-inverse" role="banner">
+		<div class="container">
+			<nav class="navbar">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a class="navbar-brand" href="#">Centratech</a>
+			    </div>
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <ul class="nav navbar-nav">
+					        <li><a href="#">Products <span class="sr-only">(current)</span></a></li>
+					        <li><a href="#">Categories</a></li>
+					        <li class="dropdown">
+					        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Product Editing<span class="caret"></span></a>
+					          <ul class="dropdown-menu">
+						            <li><a href="#">Create Product</a></li>
+						            <li role="separator" class="divider"></li>
+						            <li><a href="#">Edit Product</a></li>
+						            <li role="separator" class="divider"></li>
+						            <li><a href="#">Delete Product</a></li>
+					          </ul>
+					        </li>
+					        <li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopu="true" aria-expanded="false">Category Editing<span class="caret"></span></a>
+								  <ul class="dropdown-menu">
+								       <li><a href="#">Create Category</a></li>
+								       <li role="separator" class="divider"></li>
+								       <li><a href="#">Edit Category</a></li>
+								       <li role="separator" class="divider"></li>
+								       <li><a href="#">Delete Category</a></li>
+								  </ul>
+								</li>
+				      </ul>
+			      <form class="navbar-form navbar-left">
+			        <div class="form-group">
+			          <input type="text" class="form-control" placeholder="Search Products...">
+			        </div>
+			        <button type="submit" class="btn btn-default">Submit</button>
+			      </form>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+		</div>
+	</header>
+	<h1>My teacher is a retard!</h1>
+	<!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</body>
+</html>
