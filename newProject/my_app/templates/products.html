@@ -1,0 +1,15 @@
+{% extends 'navbar.html' %}
+
+{% block container %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">
+  <div class="top-pad">
+    <div class="well">
+      {% for item in my_list %}
+        <h3>
+          <a href="#">{{ item[2] }}</a>
+          <small><b>Price:</b> ${{ item[2] }}</small><small> <b>Category:</b> {{ item[3] }}</small>
+        </h3>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

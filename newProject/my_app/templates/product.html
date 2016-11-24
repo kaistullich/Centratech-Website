@@ -1,0 +1,15 @@
+{% extends 'navbar.html' %}
+
+{% block container %}
+  <a style="margin-right:25px" href="{{url_for('my_view.product_edit',key=single_product[0]) }}">Edit</a>
+  <a href="{{ url_for('my_view.product_delete',key=single_product[0]) }}">Delete</a>
+  <div class="top-pad">
+  
+    <table><col width="250">
+    <td><img src={{ single_product[4] }} style="width:220px;height:326px"></td>
+    <td valign="top"><h1 style="color:blue;"> {{ single_product[1] }}</h1>
+	<p><b>Category:</b> {{ single_product[3] }}</p>
+ 	<p><b>Price:</b> {{ single_product[2] }}</p>
+  </div>
+ 
+{% endblock %}

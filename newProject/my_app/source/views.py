@@ -2,8 +2,8 @@ from flask import Blueprint, render_template
 
 my_view = Blueprint('my_view' , __name__)
 
-import my_app.source.views_products as omwtfyb
-import my_app.source.views_categories as fuck_you
+import my_app.source.views_products as product_view
+import my_app.source.views_categories as category_view
 
 # ========================================================
 # ----------------- HOME PAGE LAYOUT ---------------------
@@ -12,7 +12,7 @@ import my_app.source.views_categories as fuck_you
 @my_view.route('/')
 @my_view.route('/home')
 def homePage():
-    return render_template('index.html')
+    return render_template('navbar.html')
 
 # ========================================================
 # ----------------- SHOW ALL PRODUCTS --------------------
@@ -20,7 +20,7 @@ def homePage():
 
 @my_view.route('/products')
 def products():
-    return None
+    return (product_view.products())
 
 # ========================================================
 # ----------------- SHOW ONE PRODUCT ---------------------
@@ -68,7 +68,7 @@ def search():
 
 @my_view.route('/categories')
 def categories():
-	return None
+	return (category_view.categories())
 
 # ========================================================
 # ----------------- SHOW ONE CATEGORY --------------------
