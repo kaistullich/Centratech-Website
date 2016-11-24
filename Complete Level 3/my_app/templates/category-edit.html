@@ -1,0 +1,15 @@
+{% extends 'home.html' %}
+{% block container %}
+<a style="margin-right:25px" href="{{url_for('my_view.category_edit',key=category_id) }}">Edit</a>
+<form method=post action="">
+<table>
+  <br>
+  {% for field in form %}
+    <tr>
+    <td>{{ field.label }}: &nbsp;</td><td>{{ field }}</td>
+    </tr>
+  {% endfor %}
+</table>
+<p><input type=submit value=Submit></form></p>
+
+{% endblock %}
