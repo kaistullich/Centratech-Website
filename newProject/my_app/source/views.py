@@ -11,7 +11,7 @@ import my_app.source.views_categories as category_view
 
 @my_view.route('/')
 @my_view.route('/home')
-def homePage():
+def home():
     return render_template('home.html')
 
 # ========================================================
