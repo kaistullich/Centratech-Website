@@ -6,8 +6,9 @@
     <div class="well">
       {% for item in my_list %}
         <h3>
-          <a href="#">{{ item[2] }}</a>
-          <small><b>Price:</b> ${{ item[2] }}</small><small> <b>Category:</b> {{ item[3] }}</small>
+          <a href="#">{{ item[1] }}</a><br>
+          <small><b>Price:</b> ${{ item[2] }} <br></small>
+          <small><b>Category:</b> {{ item[3] }} </small>
         </h3>
       {% endfor %}
     </div>
