@@ -59,8 +59,8 @@ def product_delete(key):
 # ========================================================
 
 @my_view.route('/search')
-def search():
-	return None
+def product_search():
+	return (product_view.product_search())
 
 # ========================================================
 # ----------------- SHOW ALL CATEGORIES-------------------
