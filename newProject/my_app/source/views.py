@@ -55,14 +55,6 @@ def product_delete(key):
 	return None
 
 # ========================================================
-# ----------------- SEARCH FUNCTION ----------------------
-# ========================================================
-
-@my_view.route('/search')
-def product_search():
-	return (product_view.product_search())
-
-# ========================================================
 # ----------------- SHOW ALL CATEGORIES-------------------
 # ========================================================
 
@@ -101,6 +93,14 @@ def category_edit(key):
 @my_view.route('/category_delete/<key>', methods=['GET', 'POST'] )
 def category_delete(key):
     return None
+
+# ========================================================
+# ----------------- SEARCH FUNCTION ----------------------
+# ========================================================
+
+@my_view.route('/search')
+def product_search():
+	return (product_view.product_search())
 
 # ========================================================
 # ----------------- USER LOGIN PAGE ----------------------

@@ -5,7 +5,9 @@ from my_app.source.models import cursor, conn
 #------------ THIS WILL SHOW ALL PRODUCTS TABLE -------------------
 def products():
 	command = """SELECT {a}.id, {a}.name, {a}.price, {b}.name
-	            FROM {a} JOIN {b} ON {a}.category_id = {b}.id
+	             FROM {a} 
+                 JOIN {b} 
+                 ON {a}.category_id = {b}.id
 	    """.format(a="product", b='category')
 	cursor.execute(command)
 	product_data = cursor.fetchall()  
@@ -15,7 +17,9 @@ def products():
 # ---------- THIS WILL SHOW A SINGLE PRODUCT ---------------------
 def product(key):    
     command = """SELECT {a}.id, {a}.name, {a}.price, {b}.name, {a}.image, {a}.stock
-                      FROM {a} join {b} ON {a}.category_id = {b}.id
+                      FROM {a} 
+                      JOIN {b} 
+                      ON {a}.category_id = {b}.id
                       WHERE {a}.id = {p1}
         """.format(a="product", b='category', p1=key)
     cursor.execute(command)
@@ -50,21 +54,23 @@ def product_create():
         price = form.price.data
         category = form.category.data
         url = form.url.data
+        stock = form.stock.data
         
         command = """
             INSERT INTO product 
-            (id,name,price,category_id,url) VALUES 
-            ({i},'{n}',{p},{c},'{u}')
-            """.format(i=product_id, n=name, p=price, c=category, u=url)
+            (id,name,price,category_id,image,stock) 
+            VALUES 
+            ({i},'{n}',{p},{c},'{im}',{s})
+            """.format(i=product_id, n=name, p=price, c=category, im=image, s=stock)
         
         cursor.execute(command)
         conn.commit()
         
-        flash('The product %s, with id %d has been created with the price %2.2f' % (name, product_id, price), 'success')
+        flash('"{}" was successfully created!'.format(name))
         return redirect(url_for('my_view.product', key=product_id))
 
     if form.errors:
-        flash(form.errors, 'danger')
+        flash(form.errors, 'Something went wrong! Retry!')
 
     return render_template('product-create.html', form=form, product_id=product_id)
 

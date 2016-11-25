@@ -25,4 +25,7 @@ class ProductForm(Form):
             validators=[InputRequired()], coerce=int)
     url = TextField(
             label='Image URL',
-            validators=[InputRequired()]) 
+            validators=[InputRequired()])
+    stock = DecimalField(
+            label='Available Stock',
+            validators=[InputRequired(), NumberRange(min=0)])
