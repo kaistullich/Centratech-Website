@@ -76,7 +76,7 @@ def category(key):
 
 @my_view.route('/category_create', methods=['GET', 'POST'] )
 def category_create():
-    return None
+    return (category_view.category_create())
 
 # ========================================================
 # ----------------- EDIT A CATEGORY ----------------------

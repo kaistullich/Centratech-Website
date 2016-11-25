@@ -1,0 +1,15 @@
+{% extends 'navbar.html' %}
+
+{% block container %}
+  <div class="top-pad">
+  	<div class="well">
+	    <form method="POST" action="{{ url_for('my_view.category_create') }}" role="form">
+	      <div class="form-group">{{ form.name.label }}: {{ form.name() }}</div>
+	      <div class="form-group">{{ form.deptPhone.label }}: {{ form.deptPhone() }}</div>
+	      <div class="form-group">{{ form.deptLine.label }}: {{ form.deptLine() }}</div>
+	      <div class="form-group">{{ form.deptManager.label }}: {{ form.deptManager() }}</div>
+	      <button type="submit" class="btn btn-default">Submit</button>
+	    </form>
+    </div>
+  </div>
+{% endblock %}
