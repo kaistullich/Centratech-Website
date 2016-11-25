@@ -27,6 +27,65 @@ def product(key):
 
     return render_template('product.html', single_product=item)
 
+
+# ---------------------- CREATE A NEW PRODUCT -------------------
+def product_create():
+    command = """ SELECT MAX(id)
+                    FROM product
+            """
+    cursor.execute(command)
+    next_id = cursor.fetchone()   
+    product_id = next_id[0]+1
+        
+    form = ProductForm(request.form, csrf_enabled=False)
+
+    command = """ SELECT * FROM category """
+    cursor.execute(command)
+    categories = cursor.fetchall()
+
+    form.category.choices = categories
+    
+    if request.method == 'POST' and form.validate():
+        name = form.name.data
+        price = form.price.data
+        category = form.category.data
+        url = form.url.data
+        
+        command = """
+            INSERT INTO product 
+            (id,name,price,category_id,url) VALUES 
+            ({i},'{n}',{p},{c},'{u}')
+            """.format(i=product_id, n=name, p=price, c=category, u=url)
+        
+        cursor.execute(command)
+        conn.commit()
+        
+        flash('The product %s, with id %d has been created with the price %2.2f' % (name, product_id, price), 'success')
+        return redirect(url_for('my_view.product', key=product_id))
+
+    if form.errors:
+        flash(form.errors, 'danger')
+
+    return render_template('product-create.html', form=form, product_id=product_id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # ------------------ PRODUCT SEARCHING ---------------------------
 
 def product_search():  

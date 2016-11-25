@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, redirect, url_for
 
 my_view = Blueprint('my_view' , __name__)
 
@@ -36,7 +36,7 @@ def product(key):
 
 @my_view.route('/product_create', methods=['GET', 'POST'])
 def product_create():
-	return None
+	return (product_view.product_create())
 
 # ========================================================
 # ----------------- EDIT A PRODUCT -----------------------
@@ -108,4 +108,10 @@ def category_delete(key):
 
 @my_view.route('/login', methods=['GET', 'POST'])
 def login():
-	return None
+	error = None
+	if request.method == 'POST':
+		if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+			error = 'Username or Password is incorrect. Please try again'
+		else:
+			return redirect(url_for('@my_view.home'))
+	return render_template('login.html', error=error)
