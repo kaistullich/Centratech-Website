@@ -29,5 +29,5 @@ def category(key):
     cursor.execute(command)
     product_data = cursor.fetchall()  
    
-    return render_template('category.html', category_id = key, 
-                           category_name=category_name, my_list=product_data)
+    return render_template('category.html', category_id = key, category_name=category_name, 
+    						my_list=product_data)
