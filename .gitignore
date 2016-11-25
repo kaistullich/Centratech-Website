@@ -1,4 +1,4 @@
 *.pyc
 .DS_Store
-Centratech.sqlite:
+Centratech.sqlite
 */__pycache__/*
