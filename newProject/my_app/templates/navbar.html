@@ -55,9 +55,9 @@
 								  </ul>
 								</li>
 				      </ul>
-			      <form class="navbar-form navbar-left">
+			      <form class="navbar-form navbar-left" action="{{ url_for('my_view.product_search') }}" method="GET">
 			        <div class="form-group">
-			          <input type="text" class="form-control" placeholder="Search Products...">
+			          <input type="text" name="name" class="form-control" placeholder="Search Products...">
 			        </div>
 			        <button type="submit" class="btn btn-default">Submit</button>
 			      </form>
