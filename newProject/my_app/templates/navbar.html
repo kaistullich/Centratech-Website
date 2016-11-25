@@ -35,6 +35,7 @@
 					        <li><a href="{{ url_for('my_view.categories') }}">Categories</a></li>
 					        <li class="dropdown">
 					        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Product Editing<span class="caret"></span></a>
+					        <!-- Product Editing -->
 					          <ul class="dropdown-menu">
 						            <li><a href="{{ url_for('my_view.product_create') }}">Create Product</a></li>
 						            <li role="separator" class="divider"></li>
@@ -43,10 +44,11 @@
 						            <li><a href="#">Delete Product</a></li>
 					          </ul>
 					        </li>
+					        <!-- Category Editing -->
 					        <li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopu="true" aria-expanded="false">Category Editing<span class="caret"></span></a>
 								  <ul class="dropdown-menu">
-								       <li><a href="#">Create Category</a></li>
+								       <li><a href="{{ url_for('my_view.category_create') }}">Create Category</a></li>
 								       <li role="separator" class="divider"></li>
 								       <li><a href="#">Edit Category</a></li>
 								       <li role="separator" class="divider"></li>

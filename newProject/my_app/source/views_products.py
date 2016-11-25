@@ -41,33 +41,35 @@ def product_create():
     next_id = cursor.fetchone()   
     product_id = next_id[0]+1
         
-    form = ProductForm(request.form, csrf_enabled=False)
+    form = ProductForm(request.form)
 
     command = """ SELECT * FROM category """
     cursor.execute(command)
     categories = cursor.fetchall()
 
-    form.category.choices = categories
+    #form.category.choices = categories -- leave commented for now until category fix dropdown
     
     if request.method == 'POST' and form.validate():
+        brand = form.brand.data
         name = form.name.data
         price = form.price.data
-        category = form.category.data
-        url = form.url.data
+        rating = form.rating.data
+        year = form.year.data
         stock = form.stock.data
+        image = form.image.data
         
         command = """
             INSERT INTO product 
-            (id,name,price,category_id,image,stock) 
+            (id,brand,name,price,rating,year,stock,image)
             VALUES 
-            ({i},'{n}',{p},{c},'{im}',{s})
-            """.format(i=product_id, n=name, p=price, c=category, im=image, s=stock)
+            ({i},'{b}','{n}',{p},{r},{y},{s},'{img}')
+            """.format(i=product_id,b=brand,n=name,p=price,r=rating,y=year,s=stock,img=image) #place category_id between rating & year when fixed
         
         cursor.execute(command)
         conn.commit()
         
-        flash('"{}" was successfully created!'.format(name))
-        return redirect(url_for('my_view.product', key=product_id))
+        flash('SUCCESS!!!!!!!!!!!!!!')
+        return redirect(url_for('my_view.products', key=product_id))
 
     if form.errors:
         flash(form.errors, 'Something went wrong! Retry!')
