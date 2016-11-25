@@ -3,8 +3,9 @@
 {% block container %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/categories.css') }}">
   <div class="top-pad">
+    <div class="well">
     {% for item in my_list %}
-    <a href="#">
+    <a href="{{ url_for('my_view.category', key=item[0]) }}">
       <h2>{{ item[1] }}</h2>
     </a>
     {% endfor %}

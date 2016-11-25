@@ -27,8 +27,8 @@ def products():
 # ========================================================
 
 @my_view.route('/product/<key>')
-def product_one(key):
-	return None
+def product(key):
+	return (product_view.product(key))
 
 # ========================================================
 # ----------------- CREATE A PRODUCT ---------------------
@@ -75,8 +75,8 @@ def categories():
 # ========================================================
 
 @my_view.route('/category/<key>')
-def category_one(key):
-    return None
+def category(key):
+    return (category_view.category(key))
 
 # ========================================================
 # ----------------- CREATE A CATEGORY --------------------

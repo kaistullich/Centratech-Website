@@ -6,7 +6,7 @@
     <div class="well">
       {% for item in my_list %}
         <h3>
-          <a href="#">{{ item[1] }}</a><br>
+          <a href="{{ url_for('my_view.product', key=item[0]) }}">{{ item[1] }}</a><br>
           <small><b>Price:</b> ${{ item[2] }} <br></small>
           <small><b>Category:</b> {{ item[3] }} </small>
         </h3>
