@@ -51,9 +51,9 @@ def product_edit():
 # ----------------- DELETE A PRODUCT ---------------------
 # ========================================================
 
-@my_view.route('/product_delete/<key>', methods=['GET', 'POST'])
-def product_delete(key):
-	return None
+@my_view.route('/product_delete', methods=['GET', 'POST'])
+def product_delete():
+	return (product_view.product_delete())
 
 # ========================================================
 # ----------------- SHOW ALL CATEGORIES-------------------
