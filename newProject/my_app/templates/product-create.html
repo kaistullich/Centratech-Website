@@ -11,8 +11,8 @@
           <div class="form-group">{{ form.price.label }}: {{ form.price() }}</div>
           <div class="form-group">{{ form.rating.label }}: {{ form.rating() }}</div>
           <div class="form-group">
+            <label for="category">Categories:</label>
             <select>
-              <label for="category">Categories:</label>
               {% for category in categories %}
               <option value="{{ category[1] }}">{{ category[1] }}</option>
               {% endfor %}
@@ -21,7 +21,7 @@
           <div class="form-group">{{ form.year.label }}: {{ form.year() }}</div>
           <div class="form-group">{{ form.stock.label }}: {{form.stock() }}</div>
           <div class="form-group">{{ form.image.label }}: {{ form.image() }}</div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-success">Submit</button>
         </form>
       </div>
     </div>
