@@ -34,13 +34,15 @@ def product(key):
 
 # ---------------------- CREATE a new product -------------------
 def product_create():
+    # this will fetch the max ID from product table
     command = """ SELECT MAX(id)
                     FROM product
             """
     cursor.execute(command)
     next_id = cursor.fetchone()   
     product_id = next_id[0]+1
-        
+    
+    # re-assings the ProductForm class from models.py into variable  
     form = ProductForm(request.form)
 
     command = """ SELECT * FROM category """
@@ -58,12 +60,13 @@ def product_create():
         stock = form.stock.data
         image = form.image.data
         
+        # will insert the new product into the product table
         command = """
             INSERT INTO product 
             (id,brand,name,price,rating,year,stock,image)
             VALUES 
             ({i},'{b}','{n}',{p},{r},{y},{s},'{img}')
-            """.format(i=product_id,b=brand,n=name,p=price,r=rating,y=year,s=stock,img=image) #place category_id between rating & year when fixed
+            """.format(i=product_id,b=brand,n=name,p=price,r=rating,y=year,s=stock,img=image)#place category_id between rating & year when fixed
         
         cursor.execute(command)
         conn.commit()
@@ -77,7 +80,49 @@ def product_create():
     return render_template('product-create.html', form=form, product_id=product_id, categories=categories)
 
 # --------------------- EDIT a product ----------------------------
+def product_edit():
 
+    # this will fetch all product names for dropdown menu
+    command = """ SELECT id,name
+                  FROM product """
+    cursor.execute(command)
+    product_name = cursor.fetchall()
+
+    # re-assings the ProductForm class from models.py into variable
+    form = ProductForm(request.form)
+
+    # this will fetch all categories for dropdown menu
+    command = """ SELECT *
+                    FROM category
+            """
+    cursor.execute(command)
+    categories = cursor.fetchall()
+
+    #form.category.choices = categories ---- leave commented out
+
+    if request.method == 'POST' and form.validate():
+        brand = form.brand.data
+        price = form.price.data
+        rating = form.rating.data
+        year = form.year.data
+        stock = form.stock.data
+        image = form.image.data
+        
+        # will update the product chosen inside of the product table
+        command = """
+            UPDATE product SET brand='{b}', price={p}, rating={r}, year={y}, stock={s}, image={img}
+            WHERE  id = {i}
+            """.format(b=brand, p=price, r=rating, y=year, s=stock, img=image, i=key)#place category_id between rating & year when fixed
+        cursor.execute(command)                                                      #place name between brand & price
+        conn.commit()
+        
+        #flash('The product %s has been edited with the price %2.2f' % (name, price), 'success')
+        return redirect(url_for('my_view.products'))
+
+    if form.errors:
+        flash(form.errors, 'danger')
+
+    return render_template('product-edit.html', form=form, categories=categories, product_name=product_name)
 
 
 
