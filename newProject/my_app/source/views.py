@@ -4,6 +4,7 @@ my_view = Blueprint('my_view' , __name__)
 
 import my_app.source.views_products as product_view
 import my_app.source.views_categories as category_view
+from my_app.source.models import cursor, conn
 
 # ========================================================
 # ----------------- HOME PAGE LAYOUT ---------------------
@@ -115,3 +116,14 @@ def login():
 		else:
 			return redirect(url_for('@my_view.home'))
 	return render_template('login.html', error=error)
+
+# ========================================================
+# ----------------- NAVBAR DROPDOWN SEARCH BOX -----------
+# ========================================================
+def dropdown_search():
+	command = """ SELECT name
+				  FROM category"""
+	cursor.execute(command)
+	dropdown_category = cursor.fetchall()
+
+	return (dropdown_category)
