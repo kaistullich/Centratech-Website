@@ -112,7 +112,7 @@ def product_edit():
         command = """
             UPDATE product SET brand='{b}', price={p}, rating={r}, year={y}, stock={s}, image={img}
             WHERE  id = {i}
-            """.format(b=brand, p=price, r=rating, y=year, s=stock, img=image, i=key)#place category_id between rating & year when fixed
+            """.format(b=brand, p=price, r=rating, y=year, s=stock, img=image, i=key)#place category_id between rating & year when fixed, 'possible product_name[0]'
         cursor.execute(command)                                                      #place name between brand & price
         conn.commit()
         
@@ -125,18 +125,17 @@ def product_edit():
     return render_template('product-edit.html', form=form, categories=categories, product_name=product_name)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+# ----------------------- Product Delete -----------------
+def product_delete():
+    #selects all product names, id from product table
+    command = """ SELECT id, name
+                  FROM product """
+    cursor.execute(command)
+    product_name = cursor.fetchall()
+    
+    #deletes product selected from product table   
+    
+    return render_template('product-delete.html', product_name=product_name)
 
 
 # ------------------ PRODUCT SEARCHING ---------------------------
@@ -194,9 +193,3 @@ def product_search():
     cursor.execute(command)
     product_data = cursor.fetchall()
     return render_template('products.html', my_list=product_data)
-
-
-
-
-
-    # --------------------------
