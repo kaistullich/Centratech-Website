@@ -1,18 +1,29 @@
 {% extends 'navbar.html' %}
 
 {% block container %}
-  <div class="top-pad">
-    <h2 style="color: red;">Product ID: {{ product_id }}</h2>
-      <form method="POST" action="{{ url_for('my_view.product_create') }}" role="form">
-        <div class="form-group">{{ form.brand.label }}: {{ form.brand() }}</div>
-        <div class="form-group">{{ form.name.label }}: {{ form.name() }}</div>
-        <div class="form-group">{{ form.price.label }}: {{ form.price() }}</div>
-        <div class="form-group">{{ form.rating.label }}: {{ form.rating() }}</div>
-        <div class="form-group">{{ form.year.label }}: {{ form.year() }}</div>
-        <div class="form-group">{{ form.stock.label }}: {{form.stock() }}</div>
-        <div class="form-group">{{ form.image.label }}: {{ form.image() }}</div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+<link rel="stylesheet" href="{{url_for('static', filename='css/product-create.css') }}">
+  <div class="top-pad" style="text-align: center;">
+    <div class="well">
+      <h2 style="color: red;">Product ID: {{ product_id }}</h2>
+        <form method="POST" action="{{ url_for('my_view.product_create') }}" role="form">
+          <div class="form-group">{{ form.brand.label }}: {{ form.brand() }}</div>
+          <div class="form-group">{{ form.name.label }}: {{ form.name() }}</div>
+          <div class="form-group">{{ form.price.label }}: {{ form.price() }}</div>
+          <div class="form-group">{{ form.rating.label }}: {{ form.rating() }}</div>
+          <div class="form-group">
+            <select>
+              <label for="category">Categories:</label>
+              {% for category in categories %}
+              <option value="{{ category[1] }}">{{ category[1] }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group">{{ form.year.label }}: {{ form.year() }}</div>
+          <div class="form-group">{{ form.stock.label }}: {{form.stock() }}</div>
+          <div class="form-group">{{ form.image.label }}: {{ form.image() }}</div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
     </div>
   </div>
 {% endblock %}
