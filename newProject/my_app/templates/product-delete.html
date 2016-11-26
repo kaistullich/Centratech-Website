@@ -1,0 +1,21 @@
+{% extends 'navbar.html' %}
+
+{% block container %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/product-delete.css') }}">
+  <div class="top-pad" style="text-align: center;">
+    <div class="well">
+      <h2 style="color: red;">Delete Product</h2>
+        <form method="POST" action="{{ url_for('my_view.product_create') }}" role="form">
+            <label for="category">Product Selection:</label>
+            <select>
+              {% for product in product_name %}
+              <option value="{{ product[1] }}">{{ product[1] }}</option>
+              {% endfor %}
+            </select><br><br>
+          <button type="submit" class="btn btn-danger">DELETE PRODUCT</button>
+        </form>
+       </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
