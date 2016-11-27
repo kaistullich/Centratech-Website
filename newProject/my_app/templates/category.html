@@ -4,10 +4,11 @@
 {% block container %}
   <div class="top-pad">
     <h2>{{ category_name }}</h2>
+    <a href="{{ url_for('my_view.category_edit', key=category_id) }}"><button type="submit" class="btn btn-warning">Edit this Category</button></a>
     <div class="well">
       {% for item in my_list %}
         <h3>
-          <a href="{{ url_for('my_view.product', key=item[0]) }}">{{ item[1] }}</a>
+          <a href="{{ url_for('my_view.category', key=item[0]) }}">{{ item[1] }}</a>
           <small>${{ item[2] }}</small>
         </h3>
       {% endfor %}

@@ -48,9 +48,7 @@
 								  <ul class="dropdown-menu">
 								       <li><a href="{{ url_for('my_view.category_create') }}">Create Category</a></li>
 								       <li role="separator" class="divider"></li>
-								       <li><a href="#">Edit Category</a></li>
-								       <li role="separator" class="divider"></li>
-								       <li><a href="#">Delete Category</a></li>
+								       <li><a href="{{ url_for('my_view.category_delete') }}">Delete Category</a></li>
 								  </ul>
 							</li>
 						<li><a href="{{ url_for('my_view.login') }}">Login</a></li>

@@ -85,15 +85,15 @@ def category_create():
 
 @my_view.route('/category_edit/<key>', methods=['GET', 'POST'] )
 def category_edit(key):
-    return None
+    return (category_view.category_edit(key))
 
 # ========================================================
 # ----------------- DELETE A CATEGORY --------------------
 # ========================================================
 
-@my_view.route('/category_delete/<key>', methods=['GET', 'POST'] )
-def category_delete(key):
-    return None
+@my_view.route('/category_delete', methods=['GET', 'POST'] )
+def category_delete():
+    return (category_view.category_delete())
 
 # ========================================================
 # ----------------- SEARCH FUNCTION ----------------------
