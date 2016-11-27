@@ -5,14 +5,14 @@
   <div class="top-pad" style="text-align: center;">
     <div class="well">
       <h2 style="color: red;">Delete Product</h2>
-        <form method="POST" action="{{ url_for('my_view.product_create') }}" role="form">
-            <label for="category">Product Selection:</label>
-            <select name="category">
-              {% for product in product_name %}
+        <form method="POST" action="{{ url_for('my_view.product_delete') }}" role="form">
+            <label for="product">Product Selection:</label>
+            <select name="product">
+              {% for product in products %}
               <option value="{{ product[0] }}">{{ product[1] }}</option>
               {% endfor %}
             </select><br><br>
-          <a a href="{{ url_for('my_view.product_delete', key=key) }}""><button type="submit" class="btn btn-danger">DELETE PRODUCT</button></a>
+          <button type="submit" class="btn btn-danger">DELETE PRODUCT</button>
         </form>
        </div>
       </div>

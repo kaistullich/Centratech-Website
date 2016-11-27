@@ -119,11 +119,20 @@ def product_delete():
     command = """ SELECT id, name
                   FROM product """
     cursor.execute(command)
-    product_name = cursor.fetchall()
+    products = cursor.fetchall()
     
-    #deletes product selected from product table   
+    #deletes product selected from product table
+    if request.method == 'POST':
+        #Command to delete goes here
+        product_id = request.form['product']
+        command = """ DELETE FROM product
+                    WHERE product.id = {p1}
+                  """.format(p1=product_id)
+        cursor.execute(command)
+        conn.commit()
+        return redirect(url_for('my_view.products'))
     
-    return render_template('product-delete.html', product_name=product_name)
+    return render_template('product-delete.html', products=products )
 
 
 # ------------------ PRODUCT SEARCHING ---------------------------
