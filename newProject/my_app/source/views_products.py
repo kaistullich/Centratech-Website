@@ -1,3 +1,5 @@
+from __future__ import print_function # In python 2.7
+import sys
 from flask import render_template, request, redirect, url_for, flash
 from my_app.source.models import ProductForm
 from my_app.source.models import cursor, conn
@@ -90,18 +92,19 @@ def product_edit(key):
     # checks if the request method == POST and if the form is validated
     if request.method == 'POST' and form.validate():
         brand = form.brand.data
-        name = request.form['name']
+        name = form.name.data
         price = form.price.data
         rating = form.rating.data
         year = form.year.data
         stock = form.stock.data
         image = form.image.data
         category = request.form['category']
+        print('Hello world!', brand, name, price, rating, year, stock, image, category, file=sys.stderr)
         # will update the product chosen inside of the product table
         command = """
-            UPDATE product SET brand='{b}', 'name={n}' price={p}, rating={r}, category_id={c}, year={y}, stock={s}, image='{img}'
+            UPDATE product SET brand='{b}', name='{n}', price={p}, rating={r}, category_id={c}, year={y}, stock={s}, image='{img}'
             WHERE  id = {i}
-            """.format(b=brand, n=name, p=price, r=rating, y=year, s=stock, img=image, i=key)
+            """.format(b=brand, n=name, p=price, r=rating, c=category, y=year, s=stock, img=image, i=key)
         cursor.execute(command)                                                              
         conn.commit()
         # will redirect user to the edited product
