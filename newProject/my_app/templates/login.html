@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 <div class="top-pad">
     <div class="well">
-        <form action="#">
+        <form action="{{url_for('my_view.home') }}" method="POST" role="form">
             <div class="imgcontainer">
                 <h2>ADMIN LOGIN</h2>
             </div>

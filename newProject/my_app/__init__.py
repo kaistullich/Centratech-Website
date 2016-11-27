@@ -1,7 +1,7 @@
 from flask import Flask
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'some_random_key'
+app.secret_key = 'some_random_key'
 
 import my_app.source.views
 
