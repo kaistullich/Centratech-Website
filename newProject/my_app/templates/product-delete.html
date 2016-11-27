@@ -7,12 +7,12 @@
       <h2 style="color: red;">Delete Product</h2>
         <form method="POST" action="{{ url_for('my_view.product_create') }}" role="form">
             <label for="category">Product Selection:</label>
-            <select>
+            <select name="category">
               {% for product in product_name %}
-              <option value="{{ product[1] }}">{{ product[1] }}</option>
+              <option value="{{ product[0] }}">{{ product[1] }}</option>
               {% endfor %}
             </select><br><br>
-          <button type="submit" class="btn btn-danger">DELETE PRODUCT</button>
+          <a a href="{{ url_for('my_view.product_delete', key=key) }}""><button type="submit" class="btn btn-danger">DELETE PRODUCT</button></a>
         </form>
        </div>
       </div>
