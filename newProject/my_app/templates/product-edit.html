@@ -4,7 +4,9 @@
 <link rel="stylesheet" href="{{url_for('static', filename='css/product-edit.css') }}">
   <div class="top-pad" style="text-align: center;">
     <div class="well">
-      <h2 style="color: blue">Edit Product</h2>
+    <div class="row" id="product-form">
+      <h2 class="col-md-6" style="color: blue">Edit Product</h2>
+    </div>
         <form method="POST" action="{{ url_for('my_view.product_edit', key=category_id) }}" role="form" id="product-form">
         <div class="row">
           <div class="form-group col-md-6">{{ form.brand.label }}: {{ form.brand() }}</div>
