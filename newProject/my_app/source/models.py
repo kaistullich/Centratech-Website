@@ -19,7 +19,6 @@ class ProductForm(Form):
 	name = TextField('Product Name', validators=[InputRequired()])
 	price = DecimalField('Price', validators=[InputRequired(), NumberRange(min=Decimal('0.0'))])
 	rating = DecimalField('Product Rating', validators=[InputRequired(), NumberRange(min=Decimal('0.0'))])
-	# CATEGORY WOULD GO HERE
 	year = IntegerField('Production Year', validators=[InputRequired(), NumberRange(min=0)])
 	stock = IntegerField('Available Stock', validators=[InputRequired(), NumberRange(min=0)])
 	image = TextField('Image URL', validators=[InputRequired()])

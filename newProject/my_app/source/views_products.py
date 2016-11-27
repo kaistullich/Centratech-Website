@@ -6,6 +6,7 @@ from my_app.source.models import cursor, conn
 
 #------------------------ SHOW ALL products-------------------
 def products():
+    #selects all product.id,name,price and category.name
 	command = """SELECT {a}.id, {a}.name, {a}.price, {b}.name
 	             FROM {a} 
                  JOIN {b} 
@@ -13,11 +14,12 @@ def products():
 	    """.format(a="product", b='category')
 	cursor.execute(command)
 	product_data = cursor.fetchall()  
-	
+	#takes 'command' and renders the template products.html
 	return render_template('products.html', my_list=product_data)
 
 # ------------------------SINGLE product ---------------------
 def product(key):    
+    # selects all columns shown
     command = """SELECT {a}.id, {a}.name, {a}.price, {b}.name, {a}.image, {a}.stock
                       FROM {a} 
                       JOIN {b} 
@@ -28,7 +30,7 @@ def product(key):
     product_data = cursor.fetchall()  
       
     if len(product_data) == 0:
-        return "The key "+ key + " was not found" 
+        flash('YOU GOT THE WRONG KEY BITCH!!!!')
     item = product_data[0]    
 
     return render_template('product.html', single_product=item, key=key)
@@ -78,10 +80,11 @@ def product_create():
 # --------------------- EDIT a product ----------------------------
 def product_edit(key):
     # this will fetch all product names for dropdown menu
-    command = """ SELECT id,name
-                  FROM product """
+    command = """ SELECT *
+                  FROM product 
+                  WHERE product.id = {k}""".format(k=key)
     cursor.execute(command)
-    product_name = cursor.fetchall()
+    product = cursor.fetchall()
     # Reassings the ProductForm class from 'models.py' into variable
     form = ProductForm(request.form)
     # this will fetch all categories for dropdown menu
@@ -113,7 +116,7 @@ def product_edit(key):
     if form.errors:
         flash(form.errors, 'danger')
     # this renders the template
-    return render_template('product-edit.html', form=form, categories=categories, product_name=product_name, category_id=key)
+    return render_template('product-edit.html', form=form, categories=categories, product=product, category_id=key)
 
 
 # ----------------------- Product Delete -----------------
