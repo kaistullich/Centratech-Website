@@ -43,9 +43,9 @@ def product_create():
 # ----------------- EDIT A PRODUCT -----------------------
 # ========================================================
 
-@my_view.route('/product_edit', methods=['GET', 'POST'])
-def product_edit():
-	return (product_view.product_edit())
+@my_view.route('/product_edit/<key>', methods=['GET', 'POST'])
+def product_edit(key):
+	return (product_view.product_edit(key))
 
 # ========================================================
 # ----------------- DELETE A PRODUCT ---------------------
