@@ -1,19 +1,20 @@
 {% extends 'navbar.html' %}
 
 {% block container %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">
-  <div class="top-pad">
-    <div class="well">
-      {% for item in my_list %}
-        <h3>
-          <a href="{{ url_for('my_view.product', key=item[0]) }}">
-            <img src="{{ item[4] }}" alt="{{ item[1] }}">
-          </a><br>
-          <h3><i>{{ item[1] }}</i></h3>
-          <h5><i>Price:</i> ${{ item[2] }} <br></h5>
-          <h5><i>Category:</i> {{ item[3] }} </h5>
-        </h3>
-      {% endfor %}
+<div class="row">
+  {% for product in my_list %}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/products.css') }}" type="text/">
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <img src="{{ product[5] }}" alt="{{ product[2] }}">
+      <div class="caption">
+        <h3 style="text-align: center;">{{ product[1] }} - {{ product[2] }}</h3>
+        <p style="text-align: center;"><b>Brand:</b> {{ product[1] }}</p>
+        <p style="text-align: center;"><b>Price:</b> ${{ product[3] }}</p>
+        <center><p><a href="{{ url_for('my_view.product', key=product[0]) }}" class="btn btn-primary" role="button">View Product</a></p></center>
+      </div>
     </div>
   </div>
+  {% endfor %}
+</div>
 {% endblock %}

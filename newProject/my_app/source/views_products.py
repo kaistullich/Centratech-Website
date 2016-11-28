@@ -7,7 +7,7 @@ from my_app.source.models import cursor, conn
 #------------------------ SHOW ALL products-------------------
 def products():
     #selects all product.id,name,price and category.name
-	command = """SELECT {a}.id, {a}.name, {a}.price, {b}.name, {a}.image
+	command = """SELECT {a}.id, {a}.brand, {a}.name, {a}.price, {b}.name, {a}.image
 	             FROM {a} 
                  JOIN {b} 
                  ON {a}.category_id = {b}.id
