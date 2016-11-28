@@ -1,6 +1,7 @@
 {% extends 'navbar.html' %}
 
 {% block container %}
+<div class="container">
 <div class="row">
   {% for product in my_list %}
   <link rel="stylesheet" href="{{url_for('static', filename='css/products.css') }}" type="text/">
@@ -22,5 +23,6 @@
     </div>
   </div>
   {% endfor %}
+</div>
 </div>
 {% endblock %}
