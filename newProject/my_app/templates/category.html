@@ -1,7 +1,7 @@
 {% extends 'navbar.html' %}
 
 {% block container %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/category.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/category.css') }}">
   <div class="top-pad">
     <h2>{{ category_name }}</h2>
     <a href="{{ url_for('my_view.category_edit', key=category_id) }}">
