@@ -19,7 +19,6 @@ aside,
 details,
 figcaption,
 figure,
-footer,
 header,
 hgroup,
 main,
@@ -28,6 +27,15 @@ nav,
 section,
 summary {
   display: block;
+
+}
+footer {
+  display: block;
+  padding: 1em;
+  color: white;
+  background-color: #101010;
+  clear: left;
+  text-align: center;
 }
 audio,
 canvas,

@@ -5,3 +5,15 @@ body {
 h1 {
 	text-align: center;
 }
+
+footer {
+	padding: 1em;
+    color: white;
+    background-color: dimgrey;
+    clear: left;
+    text-align: center;
+}
+
+a {
+	color: white;
+}
