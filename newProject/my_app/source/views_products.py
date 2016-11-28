@@ -1,4 +1,4 @@
-from __future__ import print_function # In python 2.7
+from __future__ import print_function
 import sys
 from flask import render_template, request, redirect, url_for, flash
 from my_app.source.models import ProductForm
@@ -180,13 +180,13 @@ def product_search():
             
 
     if condition == "":
-        command = """SELECT {a}.id, {a}.name, {a}.price, {b}.name
+        command = """SELECT {a}.id, {a}.brand, {a}.name, {a}.price, {b}.name, {a}.image
                           FROM {a} 
                           JOIN {b} 
                           ON {a}.category_id = {b}.id
             """.format(a="product", b='category')        
     else:
-        command = """SELECT {a}.id, {a}.name, {a}.price, {b}.name
+        command = """SELECT {a}.id, {a}.brand, {a}.name, {a}.price, {b}.name, {a}.image
                           FROM {a} 
                           JOIN {b} 
                           ON {a}.category_id = {b}.id
