@@ -1,5 +1,11 @@
-p {
+div.well p {
     font-size: 16px;
     color: black;
-    padding-left: 40px;
+    text-align: center;
+}
+div.well a {
+    text-align: center;
+}
+h2 {
+    text-align: center;
 }

@@ -4,8 +4,12 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/category.css')}}">
   <div class="top-pad">
     <h2>{{ category_name }}</h2>
-    <a href="{{ url_for('my_view.category_edit', key=category_id) }}"><button type="submit" class="btn btn-warning">Edit this Category</button></a>
-    <div class="well">
+    <a href="{{ url_for('my_view.category_edit', key=category_id) }}">
+      <center>
+        <button type="submit" class="btn btn-warning">Edit this Category</button>
+      </center>
+    </a>
+    <div class="well" style="text-align:center;">
       {% for item in my_list %}
         <h3>
           <a href="{{ url_for('my_view.product', key=item[0]) }}" style="color:#337ab7">{{ item[1] }} - {{ item[2] }}</a>
