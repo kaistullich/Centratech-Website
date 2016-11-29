@@ -5,7 +5,7 @@
   <div class="top-pad">
     <div class="well">
     {% for item in my_list %}
-    <a href="{{ url_for('my_view.category', key=item[0]) }}">
+    <a href="{{ url_for('my_view.category', key=item[0]) }}" style="color: black">
       <h2>{{ item[1] }}</h2>
     </a>
     {% endfor %}
