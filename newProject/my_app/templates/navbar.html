@@ -2,19 +2,17 @@
 <html>
 <head>
 	<title>Centratech Electronics</title>
+	<link rel="shortcut icon" href="{{url_for('static', filename='images/logo.png') }}">
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/boostrap-theme.min.css') }}">
 
 	<!-- My OWN stylesheet -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home_page.css') }}"> 
 
 </head>
 <body>
-	<header class="navbar-inverse" role="banner">
+	<header class="navbar-inverse" role="banner" style="background-color: cadetblue">
 			<nav class="navbar">
 			  <div class="container-fluid">
 			    <!-- Brand and toggle get grouped for better mobile display -->
@@ -25,15 +23,15 @@
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 				      </button>
-				      <a class="navbar-brand" href="{{ url_for('my_view.home') }}">Centratech</a>
+				      <a class="navbar-brand" href="{{ url_for('my_view.home') }}" style="font-size:50px; color:white;">Centratech</a>
 			    </div>
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				      <ul class="nav navbar-nav">
-					        <li><a href="{{ url_for('my_view.products') }}">Products <span class="sr-only">(current)</span></a></li>
-					        <li><a href="{{ url_for('my_view.categories') }}">Categories</a></li>
+					        <li><a href="{{ url_for('my_view.products') }}" style="font-size:20px; color:white;">Products <span class="sr-only">(current)</span></a></li>
+					        <li><a href="{{ url_for('my_view.categories') }}" style="font-size:20px; color:white;">Categories</a></li>
 					        <li class="dropdown">
-					        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Product Editing<span class="caret"></span></a>
+					        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size:20px; color:white;">Product Editing<span class="caret"></span></a>
 					        <!-- Product Editing -->
 					          <ul class="dropdown-menu">
 						            <li><a href="{{ url_for('my_view.product_create') }}">Create Product</a></li>
@@ -43,7 +41,7 @@
 					        </li>
 					        <!-- Category Editing -->
 					        <li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopu="true" aria-expanded="false">Category Editing<span class="caret"></span></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopu="true" aria-expanded="false" style="font-size:20px; color:white;">Category Editing<span class="caret"></span></a>
 								  <ul class="dropdown-menu">
 								       <li><a href="{{ url_for('my_view.category_create') }}">Create Category</a></li>
 								       <li role="separator" class="divider"></li>
@@ -51,35 +49,35 @@
 								  </ul>
 							</li>
 						<!-- LOGIN BUTTON -->
-						<li><a href="{{ url_for('my_view.login') }}">Login</a></li>
+						<li><a href="{{ url_for('my_view.login') }}" style="font-size:20px; color:white;">Login</a></li>
 				      </ul>
 				  <!-- SEARCH FUNCTION -->
 			      <form class="navbar-form navbar-left" action="{{ url_for('my_view.product_search') }}" method="GET">
 			        <div class="form-group">
-			        <div class="row">
-					  <div class="col-lg-12">
-					    <div class="input-group">
-					      <div class="input-group-btn">
-					        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <span class="caret"></span></button>
-					        <ul class="dropdown-menu">
-								<li><a href="#">Laptops</a></li>
-								<li><a href="#">Cameras</a></li>
-								<li><a href="#">Gaming</a></li>
-								<li><a href="#">Networking</a></li>
-								<li><a href="#">Tools</a></li>
-								<li><a href="#">Headphones</a></li>
-								<li><a href="#">Speakers</a></li>
-								<li><a href="#">Miscellaneous</a></li>
-								<li><a href="#">Blu-Ray</a></li>
-					        </ul>
-					       </div><!-- /Dropdown Button -->
-					      <input type="text" name="name" class="form-control" placeholder="Search Products...">
-					    </div><!-- /input-group -->
-					    <button type="submit" class="btn btn-default">Submit</button>
-					  </div><!-- /.col-lg-6 -->
-			        </div>
-			        </div>
-			      </form><!-- END SEARCH FUNCTION -->
+			        	<div class="row">
+					  			<div class="col-lg-12">
+					    			<div class="input-group">
+					      			<div class="input-group-btn">
+					        		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <span class="caret"></span></button>
+					        		<ul class="dropdown-menu">
+												<li><a href="#">Laptops</a></li>
+												<li><a href="#">Cameras</a></li>
+												<li><a href="#">Gaming</a></li>
+												<li><a href="#">Networking</a></li>
+												<li><a href="#">Tools</a></li>
+												<li><a href="#">Headphones</a></li>
+												<li><a href="#">Speakers</a></li>
+												<li><a href="#">Miscellaneous</a></li>
+												<li><a href="#">Blu-Ray</a></li>
+											</ul>
+					       		</div><!-- /Dropdown Button -->
+					      		<input type="text" name="name" class="form-control" placeholder="Search Products...">
+					    		</div><!-- /input-group -->
+					    		<button type="submit" class="btn btn-default">Submit</button>
+					  		</div><!-- /.col-lg-6 -->
+			         </div>
+			      	</div>
+			       </form><!-- END SEARCH FUNCTION -->
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
 			</nav>
