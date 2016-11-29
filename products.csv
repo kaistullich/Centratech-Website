@@ -1,0 +1,46 @@
+brand,name,price,rating,category_id,year,stock,image
+Apple,Macbook Pro,1300,4.5,1,2016,6,http://zdnet1.cbsistatic.com/hub/i/2016/11/07/f2fafebf-2442-4cf1-9d48-d71fcc48a4ae/6b69e3ef899dd4feef43c63b2f9e195b/macbook-pro-13-header2.jpg
+Acer,Aspire,579,4,1,2014,14,https://images-na.ssl-images-amazon.com/images/I/71tiAIUkggL._SL1322_.jpg
+Gigabyte,Gigabyte,1699,5,1,2016,37,http://images10.newegg.com/ProductImageCompressAll300/34-233-175-07.jpg
+Dell,Inspiron,799,3.4,1,2016,23,http://3.bp.blogspot.com/-IuMXastfEeg/UYOUsLQfzjI/AAAAAAAAAzA/g4MrZRhmVgo/s1600/Dell+Inspiron+3521.jpg
+Apple,Macbook Air,899,4.7,1,2016,39,http://www.notebookcheck.net/uploads/tx_nbc2/design_unibody2_20101020_01.png
+Canon,EOS Rebel,599,4.7,2,2016,49,https://shop.usa.canon.com/wcsstore/ExtendedSitesCatalogAssetStore/34688_1_xl.jpg
+Nikon,D5500,699,4.8,2,2015,28,http://cdn-4.nikon-cdn.com/e/Q5NM96RZZo-YRYNeYvAi9beHK4x3L-8joW7yUnybX4TCMkFk-mOrm-nraMSB68suimClsSfnK7sEK7urtYpz1Q==/Views/1544_D5500_left.png
+Canon,EOS 80D,1599,4.9,2,2016,17,http://www.newsshooter.com/wp-content/uploads/2016/02/EOS-80D-EF-S-18-55mm-IS-STM-LCD-Open-FSL.jpg
+Sony,Alpha a77 II,2099,4.9,2,2016,39,https://phillipreeve.net/blog/wp-content/uploads/2015/06/sony_alpha-7r-ii-_05.jpg
+Canon,EOS 6D,1899,4.9,2,2016,18,http://www.kenrockwell.com/canon/6d/D3S_9085-left-1200.jpg
+Xbox,Xbox One S,299,5,3,2016,27,https://i.ytimg.com/vi/XuTwtOo88r8/maxresdefault.jpg
+Sony,Playstation 4,399,3.7,3,2014,3,http://media.psu.com/media/articles/image/playstation4_image.jpg
+Nintendo,Wii U,299,2.5,3,2012,16,http://www.cheatsheet.com/wp-content/uploads/2016/05/wii-u.jpg
+Sega,Dreamcast,99,3,3,1998,9,https://upload.wikimedia.org/wikipedia/commons/a/a0/Sega-dreamcast-set.png
+Nintendo,3DS,199,4.4,3,2013,49,http://www.nintendo.com/images/social/fb-3ds-400x400.jpg
+Netgear,N600,109,4.4,4,2014,14,http://www.netgear.com/images/Products/Networking/WirelessRouters/WNDR3700v5/WNDR3700v5_3D_ENbox_Transparent_c.png
+Xfinity,Arris Touchstone,199,4.3,4,2016,9,http://pisces.bbystatic.com/image2/BestBuy_US/images/products/9082/9082028_rd.jpg;canvasHeight=550;canvasWidth=642
+Zoom,N300,66,4.2,4,2015,45,http://pisces.bbystatic.com/image2/BestBuy_US/images/products/4277/4277014_rd.jpg;maxHeight=550;maxWidth=642
+Asus,RT-AC1200,49,3.3,4,2015,31,http://gloimg.gearbest.com/gb/pdm-product-pic/Electronic/2015/12/30/goods-img/1475007642748193383.JPG
+Netgear,NighHawk X10,499,4.5,4,2016,1,http://www.geeky-gadgets.com/wp-content/uploads/2016/10/Netgear-Nighthawk-X10-Router.jpg
+General Tools,Screwdriver,20,1,5,2010,1,https://images-na.ssl-images-amazon.com/images/I/51KkvLH-9JL._SL1200_.jpg
+Bosch,Power Box,199,3.7,5,2013,42,https://www.boschtools.com/ca/en/ocsmedia/optimized/full/PB360C_Hero.png
+PK,Solar Tool Kit,158,3.1,5,2014,34,https://www.comtradestore.com/product_images/b/709/PK-2061__62077_zoom.jpg
+Sun Force,Power Inverter,319,2.2,5,2015,11,https://images-na.ssl-images-amazon.com/images/I/61jq4wNHzOL._SY355_.jpg
+GT,Infrared Reader,139,4.4,5,2013,41,https://ae01.alicdn.com/kf/HTB1ugMzHVXXXXbOXpXXq6xXFXXXo/Victor-VC-305B-infrared-thermometer-Mini-Handheld-font-b-IR-b-font-Infrared-font-b-Gun.jpg
+Bose,True Sound,299,5,6,2015,49,https://goo.gl/WpprLH
+Beats,Powerbeats 2,140,4.5,6,2016,46,https://goo.gl/EyQmDB
+Jaybird,X2,80,4.1,6,2015,32,https://goo.gl/GpzDLS
+Sony,ZX,129.99,3.9,6,2014,3,https://goo.gl/33lqWN
+Philips,Extra Base,49.99,3,6,2015,21,https://goo.gl/WuAypP
+JBL,Flip 3,79.99,4,7,2016,23,https://goo.gl/wu2vVc
+Beats,Pill,212.99,4.6,7,2015,12,https://goo.gl/28f5zf
+Google,Home,139.99,4.9,7,2016,16,https://goo.gl/aNpBbX
+Amazon,Echo ,129.99,4.1,7,2016,12,https://goo.gl/k3U5P0
+Sony,Dual Series,229.99,4.5,7,2013,49,https://goo.gl/cy55aB
+Vengance,DDR3 16GB Ram,39.99,4.2,8,2014,3,https://goo.gl/TdoWvW
+MSI,990FXA,220.99,3.9,8,2012,14,https://goo.gl/RHiWIL
+Consair,Mechanical Keyboard,90.99,4.8,8,2014,23,https://goo.gl/NOsDQL
+Electro,FP69X,59.99,4,8,2010,39,https://goo.gl/8FNsf5
+Startech,Computer Fan,12.99,4.2,8,2012,21,https://goo.gl/HnGBik
+GTX,F960,260.99,4.7,8,2015,4,https://goo.gl/oTHdLc
+Blue-Ray,Game of Thrones,29.99,4.8,9,2016,22,https://goo.gl/TphqD1
+Blue-Ray,The Avengers,34.99,4.2,9,2014,5,https://goo.gl/aoBhfL
+Blue-Ray,Deadpool,15.99,4.6,9,2015,11,https://goo.gl/fMg34n
+Blue-Ray,Friends,79.99,3.9,9,2000,21,https://goo.gl/oDGOrx
