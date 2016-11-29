@@ -2,52 +2,94 @@
 
 {% block container %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/product-edit.css') }}">
-  <div class="top-pad" style="text-align: center;">
-    <div class="well">
-    <div class="row" id="product-form">
-      <h2 class="col-md-6" style="color: blue">Edit Product</h2>
-    </div>
-        <form method="POST" action="{{ url_for('my_view.product_edit', key=category_id) }}" role="form" id="product-form">
-        <div class="row">
-          <div class="form-group col-md-6">{{ form.brand.label }}: {{ form.brand() }}</div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-6">{{ form.name.label }}: {{ form.name() }}</div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-6">{{ form.price.label }}: {{ form.price() }}</div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-6">{{ form.rating.label }}: {{ form.rating() }}</div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-6">
-            <!-- Category Dropdown -->
-            <label for="category col-md-6" id="category-select">Categories: </label>
-              <select name="category" id="category">
-                {% for category in categories %}
-                <option value="{{ category[0] }}">{{ category[1] }}</option>
-                {% endfor %}
-              </select>
-            <!-- END Category Dropdown -->
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-6">{{ form.year.label }}: {{ form.year() }}</div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-6">{{ form.stock.label }}: {{form.stock() }}</div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-6">{{ form.image.label }}: {{ form.image() }}</div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <button type="submit" class="btn btn-success">Submit</button>
-          </div>
-        </div>
-        </form>
+<div class="top-pad" style="text-align: center;">
+  <div class="well">
+  <div class="row" id="product-form">
+    <h2 class="col-md-6" style="color: blue">Edit Product</h2>
+  </div>
+      <form method="POST" action="{{ url_for('my_view.product_edit', key=category_id) }}" role="form" id="product-form">
+      <div class="row">
+        <div class="form-group col-md-6">{{ form.brand.label }}: {{ form.brand() }}</div>
       </div>
+      <div class="row">
+        <div class="form-group col-md-6">{{ form.name.label }}: {{ form.name() }}</div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">{{ form.price.label }}: {{ form.price() }}</div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">{{ form.rating.label }}: {{ form.rating() }}</div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <!-- Category Dropdown -->
+          <label for="category col-md-6" id="category-select">Categories: </label>
+            <select name="category" id="category">
+              {% for category in categories %}
+              <option value="{{ category[0] }}">{{ category[1] }}</option>
+              {% endfor %}
+            </select>
+          <!-- END Category Dropdown -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">{{ form.year.label }}: {{ form.year() }}</div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">{{ form.stock.label }}: {{form.stock() }}</div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">{{ form.image.label }}: {{ form.image() }}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+      </form>
     </div>
   </div>
+
+<!-- START FOOTER -->
+<footer>
+	<div class="container text-center">
+    <hr />
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy & Legal</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns & Replacement</a></li>          
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="{{ url_for('my_view.products')}}">Products</a></li>
+          <li><a href="{{ url_for('my_view.categories')}}">Categories</a></li>
+        </ul>
+      </div>  
+    </div>
+  </div>
+  <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href="{{ url_for('my_view.home') }}">© 2016 Centratech Electronics.</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</footer> <!-- END FOOTER -->
 {% endblock %}
