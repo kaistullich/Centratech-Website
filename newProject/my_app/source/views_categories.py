@@ -66,13 +66,22 @@ def category_create():
 # -------------------------- Edit Category ----------------------------------------
 def category_edit(key):
     # fetches all the names of the categories
-    command = """ SELECT id, name
-                  FROM category """
+    command = """ SELECT *
+                  FROM category 
+                  WHERE id = {k}""".format(k=key)
     cursor.execute(command)
     all_categories = cursor.fetchall()
-   
-    # reassigns the class CategoryFrom from 'models.py' to a variable
-    form = CategoryForm()
+    # Pre-populating the form when editing categories
+    if all_categories is None:
+        form = CategoryForm(request.form)
+    else:
+        single_category = all_categories[0]
+        form = CategoryForm(request.form, \
+                            name=single_category[1], \
+                            deptPhone=single_category[2], \
+                            deptLine=single_category[3], \
+                            deptManager=single_category[4])
+
     # checks if the request method is POST and if form is validated
     if request.method == 'POST':
         name = request.form['name']

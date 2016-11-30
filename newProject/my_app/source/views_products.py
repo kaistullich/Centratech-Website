@@ -88,12 +88,10 @@ def product_edit(key):
                   WHERE product.id = {k}""".format(k=key)
     cursor.execute(command)
     product = cursor.fetchall()
-    # Reassings the ProductForm class from 'models.py' into variable
+    # Pre-populating the form when editing products
     if product is None:
-        print( product )
         form = ProductForm(request.form)
     else:
-        print( product )
         single_product = product[0]
         form = ProductForm(request.form, \
                            brand=single_product[0], \
