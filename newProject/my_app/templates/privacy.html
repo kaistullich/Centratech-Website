@@ -1,0 +1,72 @@
+{% extends 'navbar.html' %}
+{% block container %}
+
+  <link rel="stylesheet" href="terms.css">
+
+<div class="container">
+<header>
+  <h1>Legal & Privacy</h1>
+</header>
+<article class="article">
+  <h2>GENERAL</h2>
+  <p>Your privacy is important to us. This privacy policy is intended to give you confidence in the privacy and security of the personal information we obtain from you whether you are using 5 examples products such as the Tio virtual or physical keyboard (the “Products”), uploading information to 5 examples and our products’ websites (the “Websites”), such as www.typetio.com, downloading our applications, or are merely visiting our Websites.
+  However, please note that we are not responsible for any use of your personal information you provide to third-party applications or websites that may be accessed via the Products or Websites. We recommend that you review the privacy policy of any third-party applications or websites that you use.
+  </p>
+  <h2>COLLECTION OF PERSONAL INFORMATION</h2>
+  <p>When you use our Products or Websites, you may be asked for personally identifiable information such as your name, address, date of birth, email address, telephone number.
+  By giving us such information, you will need to consent to our using it in the manner described in this policy.
+  You may withdraw your consent at any time by emailing us at centratech@centratech.com. We will return or destroy your personal information within five days of receipt of your withdrawal of consent.
+  Cookie information, pages you have requested and your IP address may also be recorded by us and/or third parties from your browser as set out in this policy. </p>
+  <h2> USE OF PERSONAL DATA </h2>
+  <p>We use personal information to allow us to process your service requests, provide access to privileged areas of the Websites, send out newsletters, personalize your visit to our Websites, personalize your use of our Products, and enable us to improve the products and services we offer. We may occasionally carry out market research and send you details of services and offers that we think may be of interest to you. If you do not wish to receive such information, please e-mail info@5examples.com or, alternatively, when we send you an e-mail, it will contain a provision for you to opt out of receiving any further information from us. </p>
+  <h2>DISCLOSURE OF PERSONAL INFORMATION </h2>
+  <p>
+  We will not disclose your personal information to any third party unless you have consented to such disclosure or where we are required to do so by law. Should you breach our terms and conditions or terms of use or if we are under a duty to disclose or share your personal data in order to comply with any legal obligation, we may disclose your information to a relevant authority. This may include exchanging information with other companies and organizations for the purposes of fraud protection and credit risk reduction. Any disclosure of personal information will be strictly controlled and made fully in accordance with current U.S. law. </p>
+  <p>Centratech reserves the right to modify these Terms of Service at any time. We do so by posting and drawing attention to the updated terms on the Site. Your decision to continue to visit and make use of the Site after such changes have been made constitutes your formal acceptance of the new Terms of Service. Therefore, we ask that you check and review this Agreement for such changes on an occasional basis. Should you not agree to any provision of this Agreement or any changes we make to this Agreement, we ask and advise that you do not use or continue to access the Your Nowhere Town site immediately. Contact Us If you have any questions about this Agreement, please feel free to contact us at Centratech@Centratech.com</p>
+  <p><strong>We are not responsible if we lose your money!</strong></p>
+</article>
+</div>
+
+<!-- START FOOTER -->
+<footer>
+	<div class="container text-center">
+    <hr />
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="{{ url_for('my_view.about_us') }}">About Us</a></li>
+          <li><a href="{{ url_for('my_view.contact')}}">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="{{ url_for('my_view.terms')}}">Terms of Service</a></li>
+          <li><a href="{{ url_for('my_view.privacy')}}">Privacy & Legal</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="{{ url_for('my_view.shipping')}}">Shipping Policy</a></li>
+          <li><a href="{{ url_for('my_view.returns')}}">Returns & Replacement</a></li>    
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="{{ url_for('my_view.products')}}">Products</a></li>
+          <li><a href="{{ url_for('my_view.categories')}}">Categories</a></li>
+        </ul>
+      </div>  
+    </div>
+  </div>
+  <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href="{{ url_for('my_view.home') }}">© 2016 Centratech Electronics.</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</footer> <!-- END FOOTER -->
+{% endblock %}
