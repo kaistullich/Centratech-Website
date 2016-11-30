@@ -1,11 +1,11 @@
 from flask import Flask, flash, redirect, render_template, request, session, abort, Blueprint, url_for
-import os
-
-my_view = Blueprint('my_view' , __name__)
 
 import my_app.source.views_products as product_view
 import my_app.source.views_categories as category_view
 from my_app.source.models import cursor, conn
+
+my_view = Blueprint('my_view' , __name__)
+
 
 # ========================================================
 # ----------------- HOME PAGE LAYOUT ---------------------
