@@ -1,6 +1,7 @@
 
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+<body style="background-color: lightgrey">
 <div class="top-pad">
     <div class="well">
         <form action="{{url_for('my_view.home') }}" method="POST" role="form">
@@ -22,4 +23,5 @@
         </form>
     </div>
 </div>
+</body>
 {% endblock %}
