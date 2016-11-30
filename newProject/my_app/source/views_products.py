@@ -71,7 +71,7 @@ def product_create():
         cursor.execute(command)
         conn.commit()
         # If succesfull it will falsh the message to the user
-        flash('The product %s has been created successfully!' % (name))
+        flash('The product "%s" has been created successfully!' % (name))
         # when form is submitted it will redirect user to the products page
         return redirect(url_for('my_view.product', key=product_id))
     # if there is an error with the form it will flash the message
@@ -124,7 +124,7 @@ def product_edit(key):
         cursor.execute(command)                                                              
         conn.commit()
         # If succesfull it will falsh the message to the user
-        flash('The product %s has been edited successfully!' % (name))
+        flash('The product "%s" has been edited successfully!' % (name))
         # will redirect user to the edited product
         return redirect(url_for('my_view.products', key=key))
     # if there is an error with the form it will flash the message
@@ -151,8 +151,13 @@ def product_delete():
                   """.format(p1=product_id)
         cursor.execute(command)
         conn.commit()
+        # If succesfull it will falsh the message to the user
+        flash('The product "%s" has been deleted successfully!' % (name))
         # if method = POST it will redirect to the show all products page
         return redirect(url_for('my_view.products'))
+    # if there is an error with the form it will flash the message
+    if form.errors:
+        flash(form.errors, 'danger')    
     # renders the product delete template
     return render_template('product-delete.html', products=products )
 
