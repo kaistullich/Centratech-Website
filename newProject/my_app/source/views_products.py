@@ -89,7 +89,20 @@ def product_edit(key):
     cursor.execute(command)
     product = cursor.fetchall()
     # Reassings the ProductForm class from 'models.py' into variable
-    form = ProductForm(request.form)
+    if product is None:
+        print( product )
+        form = ProductForm(request.form)
+    else:
+        print( product )
+        single_product = product[0]
+        form = ProductForm(request.form, \
+                           brand=single_product[0], \
+                           name=single_product[1], \
+                           price=single_product[2], \
+                           rating=single_product[3], \
+                           year=single_product[5], \
+                           stock=single_product[6], \
+                           image=single_product[7])
     # this will fetch all categories for dropdown menu
     command = """ SELECT *
                   FROM category """
