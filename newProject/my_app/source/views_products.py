@@ -27,12 +27,13 @@ def product(key):
                       WHERE {a}.id = {p1}
         """.format(a="product", b='category', p1=key)
     cursor.execute(command)
+    # fetches all the columns from the command variable
     product_data = cursor.fetchall()  
-      
+    # if the len of product_data DB is too long it will show error 
     if len(product_data) == 0:
         flash('YOU GOT THE WRONG KEY BITCH!!!!')
     item = product_data[0]    
-
+    # renders template to show a single product
     return render_template('product.html', single_product=item, key=key)
 
 
@@ -129,21 +130,23 @@ def product_delete():
     
     #deletes product selected from product table
     if request.method == 'POST':
-        #Command to delete goes here
+        # Command to delete goes here
         product_id = request.form['product']
         command = """ DELETE FROM product
                     WHERE product.id = {p1}
                   """.format(p1=product_id)
         cursor.execute(command)
         conn.commit()
+        # if method = POST it will redirect to the show all products page
         return redirect(url_for('my_view.products'))
-    
+    # renders the product delete template
     return render_template('product-delete.html', products=products )
 
 
 # ------------------ PRODUCT SEARCHING ---------------------------
-
+# Produc Search Function
 def product_search():  
+    # All the arguments 
     name = request.args.get('name')
     price = request.args.get('price')
     price_greater_equal = request.args.get('price_ge')
@@ -153,7 +156,7 @@ def product_search():
     year = request.args.get('year')
     rating = request.args.get('rating')
     stock = request.args.get('stock')
-    
+    # Creates the argument for each varibale from above
     condition = ""
     if name != None:
         condition += "product.name LIKE '%" +name+ "%'"
@@ -178,7 +181,7 @@ def product_search():
             condition += " AND "
         condition  += "product.price <= " + str(price_smaller_equal) 
             
-
+    # Creates the query from the DB
     if condition == "":
         command = """SELECT {a}.id, {a}.brand, {a}.name, {a}.price, {b}.name, {a}.image
                           FROM {a} 
@@ -192,7 +195,8 @@ def product_search():
                           ON {a}.category_id = {b}.id
                           WHERE {cond}
             """.format(a="product", b='category', cond = condition)
-       
+    # Executes either command depending on the search type
     cursor.execute(command)
     product_data = cursor.fetchall()
+    # When user hits submit on search it will render template with the returned searches
     return render_template('products.html', my_list=product_data)
