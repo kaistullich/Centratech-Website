@@ -11,10 +11,10 @@
     </a>
     <div class="well" style="text-align:center;">
       {% for item in my_list %}
-        <h3>
-          <a href="{{ url_for('my_view.product', key=item[0]) }}" style="color:#337ab7">{{ item[1] }} - {{ item[2] }}</a>
-          <p><b>Price:</b> ${{ item[3] }}</p>
-        </h3>
+      <a href="{{ url_for('my_view.product', key=item[0]) }}" style="color:#337ab7; font-size:30px;">
+        {{ item[1] }} - {{ item[2] }}
+      </a>
+      <p><b>Price:</b> ${{ item[3] }}</p>
       {% endfor %}
     </div>
   </div>

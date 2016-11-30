@@ -110,6 +110,3 @@ def category_delete():
         return redirect(url_for('my_view.categories'))
     
     return render_template('category-delete.html', categories=categories )
-
-
-
