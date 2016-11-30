@@ -1,5 +1,4 @@
 from flask import Flask, flash, redirect, render_template, request, session, abort, Blueprint, url_for
-
 import my_app.source.views_products as product_view
 import my_app.source.views_categories as category_view
 from my_app.source.models import cursor, conn
@@ -167,7 +166,7 @@ def about_us():
 
 @my_view.route('/contact')
 def contact():
-    return render_template('contact.html')
+    return (category_view.contact_us())
 
 # ========================================================
 # ----------------- RETURNS ------------------------------
