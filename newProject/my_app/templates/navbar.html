@@ -16,15 +16,8 @@
 			<nav class="navbar">
 			  <div class="container-fluid">
 			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
-				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				      </button>
-				      <a class="navbar-brand" href="{{ url_for('my_view.home') }}" style="font-size:50px; color:white;">Centratech</a>
-			    </div>
+				<a class="navbar-brand" href="/home" style="font-size:50px;color:white;padding-left: 40px;padding-bottom: 50px;">Centratech</a>
+
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				      <ul class="nav navbar-nav">
@@ -50,12 +43,9 @@
 							</li>
 						<!-- LOGIN BUTTON -->
 						<li><a href="{{ url_for('my_view.login') }}" style="font-size:20px; color:white;">Login</a></li>
-				      </ul>
-				  <!-- SEARCH FUNCTION -->
-			      <form class="navbar-form navbar-left" action="{{ url_for('my_view.product_search') }}" method="GET">
+				    <form class="navbar-form navbar-left" action="{{ url_for('my_view.product_search') }}" method="GET">
 			        <div class="form-group">
 			        	<div class="row">
-					  			<div class="col-lg-12">
 					    			<div class="input-group">
 					      			<div class="input-group-btn">
 					        		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <span class="caret"></span></button>
@@ -74,10 +64,11 @@
 					      		<input type="text" name="name" class="form-control" placeholder="Search Products...">
 					    		</div><!-- /input-group -->
 					    		<button type="submit" class="btn btn-default">Submit</button>
-					  		</div><!-- /.col-lg-6 -->
 			         </div>
 			      	</div>
 			       </form><!-- END SEARCH FUNCTION -->
+						  </ul>
+				  <!-- SEARCH FUNCTION -->
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
 			</nav>
