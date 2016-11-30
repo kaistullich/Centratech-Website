@@ -4,16 +4,16 @@
 <body style="background-color: lightgrey">
 <div class="top-pad">
     <div class="well">
-        <form action="{{url_for('my_view.home') }}" method="POST" role="form">
+        <form action="{{url_for('my_view.home') }}" role="form">
             <div class="imgcontainer">
                 <h2>ADMIN LOGIN</h2>
             </div>
 
             <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" required>
+            <input type="text" placeholder="Enter Username" name="uname" required>
 
             <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" required>
+            <input type="password" placeholder="Enter Password" name="psw" required>
                 
             <button type="submit" style="font-size: 15px">Login</button>
 
