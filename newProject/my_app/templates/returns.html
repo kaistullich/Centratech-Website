@@ -1,0 +1,57 @@
+{% extends 'navbar.html' %}
+
+{% block container %}
+<div class="container">
+  <h2> Returns </h2>
+    <b> What can I return? </b> 
+    <div class="orc-paragraph-content"> You may return most new, unopened items sold and fulfilled by Centratech within 30 days of delivery for a full refund. During the holidays, items shipped by Centratech between November 1st and December 31st can be returned until January 31st. </div> 
+   
+    <b> When will I get my refund? </b> 
+    <div class="orc-paragraph-content"> Usually in about 2-3 weeks. Most refunds are fully refunded in 3-5 days after we receive and process your return. </div> 
+
+    <b> Does Centratech offer replacements and exchanges? </b> 
+    <div class="orc-paragraph-content"> Yes! Just have a proof of purchase and contact us at centratech@centratech.com and a representative will assist you. </div><br>
+</div>
+<!-- START FOOTER -->
+<footer>
+	<div class="container text-center">
+    <hr />
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="{{ url_for('my_view.about_us') }}">About Us</a></li>
+          <li><a href="{{ url_for('my_view.contact')}}">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="{{ url_for('my_view.terms')}}">Terms of Service</a></li>
+          <li><a href="{{ url_for('my_view.privacy')}}">Privacy & Legal</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="{{ url_for('my_view.shipping')}}">Shipping Policy</a></li>
+          <li><a href="{{ url_for('my_view.returns')}}">Returns & Replacement</a></li>    
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="{{ url_for('my_view.products')}}">Products</a></li>
+          <li><a href="{{ url_for('my_view.categories')}}">Categories</a></li>
+        </ul>
+      </div>  
+    </div>
+  </div>
+  <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href="{{ url_for('my_view.home') }}">© 2016 Centratech Electronics.</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</footer> <!-- END FOOTER -->
+{% endblock %}
