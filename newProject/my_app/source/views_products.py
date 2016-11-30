@@ -70,8 +70,10 @@ def product_create():
             """.format(i=product_id,b=brand,n=name,p=price,r=rating,c=category,y=year,s=stock,img=image)#place category_id between rating & year when fixed
         cursor.execute(command)
         conn.commit()
+        # If succesfull it will falsh the message to the user
+        flash('The product %s has been created successfully!' % (name))
         # when form is submitted it will redirect user to the products page
-        return redirect(url_for('my_view.products', key=product_id))
+        return redirect(url_for('my_view.product', key=product_id))
     # if there is an error with the form it will flash the message
     if form.errors:
         flash(form.errors, 'Something went wrong! Retry!')
@@ -103,7 +105,6 @@ def product_edit(key):
         stock = form.stock.data
         image = form.image.data
         category = request.form['category']
-        print('Hello world!', brand, name, price, rating, year, stock, image, category, file=sys.stderr)
         # will update the product chosen inside of the product table
         command = """
             UPDATE product SET brand='{b}', name='{n}', price={p}, rating={r}, category_id={c}, year={y}, stock={s}, image='{img}'
@@ -111,6 +112,8 @@ def product_edit(key):
             """.format(b=brand, n=name, p=price, r=rating, c=category, y=year, s=stock, img=image, i=key)
         cursor.execute(command)                                                              
         conn.commit()
+        # If succesfull it will falsh the message to the user
+        flash('The product %s has been edited successfully!' % (name))
         # will redirect user to the edited product
         return redirect(url_for('my_view.products', key=key))
     # if there is an error with the form it will flash the message
