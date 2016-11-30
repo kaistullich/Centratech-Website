@@ -1,0 +1,95 @@
+{% extends 'navbar.html' %}
+{% block container %}
+
+  <link rel="stylesheet" href="terms.css">
+
+<div class="container">
+<header>
+  <h1>SHIPPING</h1>
+</header>
+<article class="article">
+
+  <h2>Please read carefully.</h2>
+  <p>How To Return An Item
+Your item must be in its original unused condition to be returned, unless there is a manufacturer defect. Your must return the item within 30 days of your purchase. 
+
+1. Please email info.centratech@gmail.com to request a refund and we will assign you a tracking #.
+2. Mail your returned item to:
+     Centratech Electronics
+     Returns Department RMS
+     415 Washinton Square
+     San Jose, CA 95050
+3. Include in your package a signed letter stating the reason for your return and the original receipt. 
+</p>
+
+  <p>Centratech reserves the right to modify these Terms of Service at any time. We do so by posting and drawing attention to the updated terms on the Site. Your decision to continue to visit and make use of the Site after such changes have been made constitutes your formal acceptance of the new Terms of Service. Therefore, we ask that you check and review this Agreement for such changes on an occasional basis. Should you not agree to any provision of this Agreement or any changes we make to this Agreement, we ask and advise that you do not use or continue to access the Your Nowhere Town 
+  site immediately. Contact Us If you have any questions about this Agreement, please feel free to contact us at Centratech@Centratech.com</p>
+  <h2> EXEMPTIONS </h2>
+  <p>Some items can not be returned if they are opened. These include music, software, and video games.
+
+Merchandise that has been worn, used, or altered will not be accepted for return or exchange. 
+
+Restocking Fee
+
+All items are subject to a 10% restocking fee, this will be deducted from your refund. We also do not refund the original shipping and handling that you paid on the order. 
+ </p>
+  <h2>PAYMENT METHODS </h2>
+  <p>Accepted Methods of Payment
+
+Credit Card (Visa, Master Card, American Express, Discover)
+Check/Money Order
+Cash On Delivery 
+
+Credit Card Charges
+
+Your credit card will be charged when you place your order. If we are not able to fulfill your order for any reason your credit card will be refunded. 
+
+   </p>
+   <h2> CUSTOMER SUPPORT </h2>
+   <p>has dedicated support engineers that will be able to assist you immediately, please keep in mind we answer all questions in the customer support forums, we do not provide one-on-one email or telephone consulting. We might just say no and hang up </p>
+  <p><strong>We are not responsible if we lose your money!</strong></p>
+</article>
+</div>
+<!-- START FOOTER -->
+<footer>
+	<div class="container text-center">
+    <hr />
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="{{ url_for('my_view.about_us') }}">About Us</a></li>
+          <li><a href="{{ url_for('my_view.contact')}}">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="{{ url_for('my_view.terms')}}">Terms of Service</a></li>
+          <li><a href="{{ url_for('my_view.privacy')}}">Privacy & Legal</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="{{ url_for('my_view.shipping')}}">Shipping Policy</a></li>
+          <li><a href="{{ url_for('my_view.returns')}}">Returns & Replacement</a></li>    
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="{{ url_for('my_view.products')}}">Products</a></li>
+          <li><a href="{{ url_for('my_view.categories')}}">Categories</a></li>
+        </ul>
+      </div>  
+    </div>
+  </div>
+  <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href="{{ url_for('my_view.home') }}">© 2016 Centratech Electronics.</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</footer> <!-- END FOOTER -->
+{% endblock %}
