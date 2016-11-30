@@ -86,9 +86,13 @@ def category_edit(key):
             """.format(n=name, dp=deptPhone, dl=deptLine, dm=deptManager, i=key)
         cursor.execute(command)
         conn.commit()
-        
+        # If succesfull it will falsh the message to the user
+        flash('The category "%s" has been edited successfully!' % (name))
         return redirect(url_for('my_view.categories'))
-    
+    # if there is an error with the form it will flash the message
+    if form.errors:
+        flash(form.errors)
+
     return render_template('category-edit.html', form=form, category_id=key, all_categories=all_categories)
 
 def category_delete():
