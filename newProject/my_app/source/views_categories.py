@@ -57,10 +57,13 @@ def category_create():
         
         cursor.execute(command)
         conn.commit()
-        
-        flash('The category %s, ID: %d has been created' % (name,category_id), 'success')
+        # if form is validated it will flash this message
+        flash('The category "%s" has been created successfully!' % (name))
         return redirect(url_for('my_view.categories'))
-    
+    # if there is an error with the form it will flash the message
+    if form.errors:
+        flash(form.errors)
+            
     return render_template('category-create.html', form=form, result=result)
 
 # -------------------------- Edit Category ----------------------------------------
@@ -120,6 +123,11 @@ def category_delete():
                   """.format(p1=category_id)
         cursor.execute(command)
         conn.commit()
+        # if form is validated it will flash this message
+        flash('The category "%s" has been deleted successfully!' % (name))
         return redirect(url_for('my_view.categories'))
-    
+    # if there is an error with the form it will flash the message
+    if form.errors:
+        flash(form.errors)
+
     return render_template('category-delete.html', categories=categories )
