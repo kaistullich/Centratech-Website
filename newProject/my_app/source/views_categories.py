@@ -107,6 +107,8 @@ def category_edit(key):
 
     return render_template('category-edit.html', form=form, category_id=key, all_categories=all_categories)
 
+# ----------------------- Category Delete -------------------------------------
+
 def category_delete():
     #selects all category names, id from product table
     command = """ SELECT id, name
@@ -131,3 +133,15 @@ def category_delete():
         flash(form.errors)
 
     return render_template('category-delete.html', categories=categories )
+
+# ------------------ Contact Us Phone Numbers -------------------
+def contact_us():
+    command = """ SELECT deptPhone, deptLine, deptMang
+                  FROM category """
+    cursor.execute(command)
+    phone_numbers = cursor.fetchall()
+
+    return render_template('contact.html', phone_numbers=phone_numbers)
+
+# ----------------------------------------------------------------
+    
