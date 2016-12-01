@@ -5475,13 +5475,15 @@ button.list-group-item-danger.active:focus {
   border-top-right-radius: 3px;
 }
 .panel-heading > .dropdown .dropdown-toggle {
-  color: inherit;
+  color: black;
 }
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
-  color: inherit;
+  font-size: 25px bold;
+  font-style: italic;
+  color: white;
+  text-align: center;
 }
 .panel-title > a,
 .panel-title > small,

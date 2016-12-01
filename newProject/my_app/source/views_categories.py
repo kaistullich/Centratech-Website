@@ -136,12 +136,12 @@ def category_delete():
 
 # ------------------ Contact Us Phone Numbers -------------------
 def contact_us():
-    command = """ SELECT deptPhone, deptLine, deptMang
+    command = """ SELECT name, deptPhone, deptLine, deptMang
                   FROM category """
     cursor.execute(command)
     phone_numbers = cursor.fetchall()
 
-    return render_template('contact.html', phone_numbers=phone_numbers)
+    return render_template('contact.html', categories=phone_numbers)
 
 # ----------------------------------------------------------------
     

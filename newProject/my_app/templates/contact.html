@@ -1,15 +1,42 @@
 {% extends 'navbar.html' %}
 
 {% block container %}
-
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/contact.css') }}">
 <div class="container">
-    <h2>CONTACT US</h2>
-    <h4>Please use our Contact Box in our home page for any inquiries or send an email to <i>contact.centratech@gmail.com</i> and we'll get back to you as soon as possible.</h4><br>
+  <hr>
+    <div class="row">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Contact Centratech</h3>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="text-align:center">Department</th>
+                        <th style="text-align:center">Department Phone Number</th>
+                        <th style="text-align:center">Department Extension</th>
+                        <th style="text-align:center">Department Manager</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for department in categories %}
+                <tr style="text-align: center">
+                  <td> {{ department[0] }}</td>
+                  <td> {{ department[1] }}</td>
+                  <td> Ext. {{ department[2] }}</td>
+                  <td> {{ department[3] }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
-{% for number in phone_numbers %}
+
+<!--{% for number in phone_numbers %}
   <p>{{ number }}</p>
-{% endfor %}
+{% endfor %}-->
 
 
 <!-- START FOOTER -->
