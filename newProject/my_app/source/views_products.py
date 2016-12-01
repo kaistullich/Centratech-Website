@@ -126,7 +126,7 @@ def product_edit(key):
         # If succesfull it will falsh the message to the user
         flash('The product "%s" has been edited successfully!' % (name))
         # will redirect user to the edited product
-        return redirect(url_for('my_view.products', key=key))
+        return redirect(url_for('my_view.product', key=key))
     # if there is an error with the form it will flash the message
     if form.errors:
         flash(form.errors)
@@ -152,7 +152,7 @@ def product_delete():
         cursor.execute(command)
         conn.commit()
         # If succesfull it will falsh the message to the user
-        flash('The product "%s" has been deleted successfully!' % (name))
+        flash('The product has been deleted successfully!')
         # if method = POST it will redirect to the show all products page
         return redirect(url_for('my_view.products'))   
     # renders the product delete template

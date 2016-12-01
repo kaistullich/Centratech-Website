@@ -126,7 +126,7 @@ def category_delete():
         cursor.execute(command)
         conn.commit()
         # if form is validated it will flash this message
-        flash('The category "%s" has been deleted successfully!' % (name))
+        flash('The category has been deleted successfully!')
         return redirect(url_for('my_view.categories'))
 
     return render_template('category-delete.html', categories=categories )

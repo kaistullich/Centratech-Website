@@ -21,20 +21,20 @@
     <div class="col-lg-12">
       <div class="col-md-3">
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="{{ url_for('my_view.about_us') }}">About Us</a></li>
+          <li><a href="{{ url_for('my_view.contact')}}">Contact</a></li>
         </ul>
       </div>
       <div class="col-md-3">
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Privacy & Legal</a></li>
+          <li><a href="{{ url_for('my_view.terms')}}">Terms of Service</a></li>
+          <li><a href="{{ url_for('my_view.privacy')}}">Privacy & Legal</a></li>
         </ul>
       </div>
       <div class="col-md-3">
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="#">Shipping Policy</a></li>
-          <li><a href="#">Returns & Replacement</a></li>          
+          <li><a href="{{ url_for('my_view.shipping')}}">Shipping Policy</a></li>
+          <li><a href="{{ url_for('my_view.returns')}}">Returns & Replacement</a></li>    
         </ul>
       </div>
       <div class="col-md-3">
