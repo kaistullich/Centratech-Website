@@ -143,8 +143,8 @@ body {
   .slide {
       animation-name: slide;
       -webkit-animation-name: slide;
-      animation-duration: 1s;
-      -webkit-animation-duration: 1s;
+      animation-duration: 0.5s;
+      -webkit-animation-duration: 0.5s;
       visibility: visible;
   }
   
