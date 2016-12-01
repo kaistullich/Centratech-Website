@@ -31,7 +31,7 @@ def product(key):
     product_data = cursor.fetchall()  
     # if the len of product_data DB is too long it will show error 
     if len(product_data) == 0:
-        flash('YOU GOT THE WRONG KEY BITCH!!!!')
+        flash('Key not found, please try again!')
     item = product_data[0]    
     # renders template to show a single product
     return render_template('product.html', single_product=item, key=key)
