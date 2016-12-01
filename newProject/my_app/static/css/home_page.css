@@ -2,6 +2,7 @@ body {
       font: 400 15px Lato, sans-serif;
       line-height: 1.8;
       background-color: lightgrey;
+      padding-top: 200px;
   }
   
   h2 {
@@ -28,7 +29,7 @@ body {
   }
   
   .container-fluid {
-      padding: 60px 50px;
+      padding-top: 15px;
   }
   
   .bg-grey {
