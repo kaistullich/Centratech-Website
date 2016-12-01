@@ -76,7 +76,7 @@ def product_create():
         return redirect(url_for('my_view.product', key=product_id))
     # if there is an error with the form it will flash the message
     if form.errors:
-        flash(form.errors, 'Something went wrong! Retry!')
+        flash(form.errors)
     # this renders the template
     return render_template('product-create.html', form=form, product_id=product_id, categories=categories)
 
@@ -129,7 +129,7 @@ def product_edit(key):
         return redirect(url_for('my_view.products', key=key))
     # if there is an error with the form it will flash the message
     if form.errors:
-        flash(form.errors, 'danger')
+        flash(form.errors)
     # this renders the template
     return render_template('product-edit.html', form=form, categories=categories, product=product, category_id=key)
 
@@ -154,10 +154,7 @@ def product_delete():
         # If succesfull it will falsh the message to the user
         flash('The product "%s" has been deleted successfully!' % (name))
         # if method = POST it will redirect to the show all products page
-        return redirect(url_for('my_view.products'))
-    # if there is an error with the form it will flash the message
-    if form.errors:
-        flash(form.errors, 'danger')    
+        return redirect(url_for('my_view.products'))   
     # renders the product delete template
     return render_template('product-delete.html', products=products )
 
