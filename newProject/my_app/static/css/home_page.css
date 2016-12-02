@@ -2,7 +2,7 @@ body {
       font: 400 15px Lato, sans-serif;
       line-height: 1.8;
       background-color: lightgrey;
-      padding-top: 200px;
+      padding-top: 250px;
   }
   
   h2 {
@@ -12,6 +12,10 @@ body {
       font-weight: 600;
       margin-bottom: 30px;
   }
+
+a:hover {
+    color: black;
+}
   
   h4 {
       font-size: 19px;

@@ -58,6 +58,7 @@ a {
 a:active,
 a:hover {
   outline: 0;
+  color: black;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -1112,7 +1113,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #black;
   text-decoration: underline;
 }
 a:focus {
@@ -3577,7 +3578,7 @@ tbody.collapse.in {
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
-  color: #fff;
+  color: black;
   text-decoration: none;
   background-color: #337ab7;
   outline: 0;
@@ -3585,7 +3586,7 @@ tbody.collapse.in {
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
-  color: #777;
+  color: black;
 }
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
@@ -4001,11 +4002,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #eee;
 }
 .nav > li.disabled > a {
-  color: #777;
+  color: black;
 }
 .nav > li.disabled > a:hover,
 .nav > li.disabled > a:focus {
-  color: #777;
+  color: black;
   text-decoration: none;
   cursor: not-allowed;
   background-color: transparent;
