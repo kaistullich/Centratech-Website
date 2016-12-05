@@ -1,7 +1,12 @@
 {% extends 'navbar.html' %}
 
 {% block container %}
-
+<head>
+  <script src="https://use.fontawesome.com/73a1b37249.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about-us.css') }}">
+</head>
+<body>
+  
 <div class="container">
   <h2>About Us</h2><br>
   <h4><b>OUR TEAM:</b> 
@@ -10,13 +15,25 @@
 
   <h4><b>OUR DREAM:</b> 
     We have always envisioned of providing the world the most advanced electronics for the most reasonable price possible. 
-    We want to be the center of all electronic needs, hence the name, Centratech. 
+    We want to be the center of all electronic needs, hence the name, <i>Centratech</i>. 
   </h4>
-  
+
   <h4><b>HOW WAS CENTRATECH CREATED?</b> 
     All 3 founders were strategically placed in a class of highly skilled individuals at SJSU. 
     Like minded individuals were paired for a project by one of the world's most renowned professors: Dana Nehoran. Once paired, Centratech was formed
   </h4><br>
+</div>
+
+<div id="about" class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <img src="{{ url_for('static', filename='images/kai_stullich.jpg') }}" alt="Kai Stullich" width="68%">
+        </div>
+        <div class="col-md-8">
+          <p id="kai-name"><b>Kai Stullich:</b></p>
+          <p><b>CEO</b> & <b>Software Developer</b> for Centratech</p>
+        </div>
+    </div>
 </div>
 
 
@@ -62,4 +79,5 @@
     </div>
 </div>
 </footer> <!-- END FOOTER -->
+</body>
 {% endblock %}
