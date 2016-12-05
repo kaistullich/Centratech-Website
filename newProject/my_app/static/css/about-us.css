@@ -1,6 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Fruktur');
+@import url('https://fonts.googleapis.com/css?family=Yellowtail');
 
 #kai-name {
-    font-family: 'Fruktur', cursive;
+    font-family: 'Yellowtail', cursive;
     font-size: 32px;
+}
+
+#kai-body {
+    font-size: 20px;
 }
