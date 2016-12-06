@@ -14,7 +14,7 @@ def products():
 	    """.format(a="product", b='category')
 	cursor.execute(command)
 	product_data = cursor.fetchall()  
-	#takes 'command' and renders the template products.html
+	# takes 'command' and renders the template products.html
 	return render_template('products.html', my_list=product_data)
 
 # ------------------------SINGLE product ---------------------

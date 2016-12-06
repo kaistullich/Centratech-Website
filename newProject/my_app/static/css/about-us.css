@@ -3,8 +3,21 @@
 #kai-name {
     font-family: 'Yellowtail', cursive;
     font-size: 32px;
+    padding-top: 80px;
 }
 
 #kai-body {
     font-size: 20px;
+}
+
+#lucas-name {
+    font-family: 'Yellowtail', cursive;
+    font-size: 32px;
+    text-align: center;
+    padding-top: 180px;
+}
+
+#lucas-body {
+    font-size: 20px;
+    text-align: center;
 }
