@@ -1,4 +1,3 @@
-
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 <body style="background-color: lightgrey">
@@ -10,17 +9,31 @@
             </div>
 
             <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="text" placeholder="Enter Username" name="userid"  required>
 
             <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-                
-            <button type="submit" style="font-size: 15px">Login</button>
-
-            <div class="container" style="background-color:#f1f1f1">
-                <center><a href="{{ url_for('my_view.home') }}" style="text-decoration: none; color: black; font-size: 15px;"><button type="button" class="cancelbtn">Cancel</button></a></center>
+            <input type="password" placeholder="Enter Password" name="pswrd" required>
+    
+            <center><input type="button" onclick="check(this.form)" value="Login"/></center>
+            <center><input type="reset" value="Reset"/></center>
+            <div class="container">
+                <center>
+                    <a href="{{ url_for('my_view.home') }}" style="text-decoration: none; color: black; font-size: 15px;">
+                        <button type="button" class="cancelbtn">HOME</button>
+                    </a>
+                </center>
             </div>
         </form>
+        <script language="javascript">
+            function check(form) {
+                if(form.userid.value == "admin" && form.pswrd.value == "admin") {
+                    window.location.href = "products";
+                }
+                else {
+                    alert("Error Password or Username")
+                }
+            }
+        </script>
     </div>
 </div>
 </body>
