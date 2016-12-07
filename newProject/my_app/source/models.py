@@ -10,8 +10,8 @@ cursor = conn.cursor()
 
 class CategoryForm(Form):
 	name = TextField('Category Name', validators=[InputRequired()])
-	deptPhone = IntegerField('Department Phone Number', validators=[InputRequired(), NumberRange(min=10)])
-	deptLine = IntegerField('Department Extension', validators=[InputRequired(), NumberRange(min=3)])
+	deptPhone = IntegerField('Department Phone Number', validators=[InputRequired(), NumberRange(min=10,max=10)])
+	deptLine = IntegerField('Department Extension', validators=[InputRequired(), NumberRange(min=3,max=3)])
 	deptManager = TextField('Department Manager', validators=[InputRequired()])
 	
 class ProductForm(Form):
