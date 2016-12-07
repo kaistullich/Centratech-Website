@@ -25,12 +25,13 @@
             </div>
         </form>
         <script language="javascript">
+            /* Checks whether the input fields are admin/admin */
             function check(form) {
                 if(form.userid.value == "admin" && form.pswrd.value == "admin") {
                     window.location.href = "products";
                 }
                 else {
-                    alert("Error Password or Username")
+                    alert("Error Password or Username Incorrect")
                 }
             }
         </script>
