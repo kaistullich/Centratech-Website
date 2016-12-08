@@ -1,6 +1,15 @@
 {% extends 'navbar.html' %}
 
 {% block container %}
+<head>
+  <title>Product Edit</title>
+  <script src="https://cdn.tinymce.com/4/tinymce.min.js"></script>
+  <script>
+  tinymce.init({
+    selector: '#mytextarea'
+  });
+  </script>
+</head>
 <link rel="stylesheet" href="{{url_for('static', filename='css/product-edit.css') }}">
 <div class="top-pad" style="text-align: center;">
   <div class="well">
@@ -41,9 +50,12 @@
       <div class="row">
         <div class="form-group col-md-6">{{ form.image.label }}: {{ form.image() }}</div>
       </div>
+      <form method="post"> <!-- START WYSIWYG -->
+        <textarea id="mytextarea">Hello, World!</textarea>
+      </form> <!-- END WYSIWYG -->
       <div class="row">
         <div class="col-md-6">
-          <button type="submit" class="btn btn-success">Submit</button>
+          <center><button type="submit" class="btn btn-success">Submit</button></center>
         </div>
       </div>
       </form>
