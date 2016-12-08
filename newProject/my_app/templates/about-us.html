@@ -2,6 +2,7 @@
 
 {% block container %}
 <head>
+  <title>About Us</title>
   <script src="https://use.fontawesome.com/73a1b37249.js"></script>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/about-us.css') }}">
 </head>
@@ -25,38 +26,51 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-4">
-          <img src="{{ url_for('static', filename='images/kai2.jpg') }}" alt="Kai Stullich" width="68%">
-        </div>
-        <div class="col-md-8">
-          <p id="kai-name"><b>Kai Stullich</b></p>
-          <p id="kai-body"><u><b>CEO</b> & <b>Web Developer</b></u> of Centratech</p>
-        </div>
-    </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <p id="lucas-name"><b>Lucas Da Cruz</b></p>
-      <p id="lucas-body"><u><b>CIO</b> & <b>Electronic Marketing Manager</b></u> of Centratech</p>
-    </div>
-    <div class="col-md-4">
-      <img src="{{ url_for('static', filename='images/LucasPicture.PNG') }}" alt="Lucas Happy" width="68%">
+<!-- Kai About -->
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <img src="{{ url_for('static', filename='images/kai.jpg') }}" alt="Kai Stullich">
+    <div class="caption">
+      <center><h3><b>Kai Stullich</b></h3></center>
+      <center><p>CEO & Web Developer for Centratech</p></center>
+      <a href="https://github.com/kaistullich">
+        <img src="{{ url_for('static', filename='images/github.png') }}" alt="Kai Stullich Github" class="img-size">
+      </a>
     </div>
   </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-          <img src="{{ url_for('static', filename='images/Bryantpic.PNG') }}" alt="Bryant" width="68%">
-        </div>
-        <div class="col-md-8">
-          <p id="bryant-name"><b>Bryant Thach</b></p>
-          <p id="bryant-body"><u><b>President</b> & <b>Web Designer</b></u> of Centratech</p>
-        </div>
+<!-- END Kai About -->
+
+<!-- Lucas About -->
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <img src="{{ url_for('static', filename='images/LucasPicture.PNG') }}" alt="Kai Stullich">
+    <div class="caption">
+      <center><h3><b>Lucas Da Cruz</b></h3></center>
+      <center><p>CEO & Web Developer for Centratech</p></center>
+      <a href="#">
+        <img src="{{ url_for('static', filename='images/github.png') }}" alt="Kai Stullich Github" class="img-size">
+      </a>
     </div>
+  </div>
 </div>
+<!-- END Lucas About -->
+
+<!-- Bryant About -->
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <img src="{{ url_for('static', filename='images/Bryantpic.PNG') }}" alt="Kai Stullich">
+    <div class="caption">
+      <center><h3><b>Byrant Tach</b></h3></center>
+      <center><p>President & Web Designer for Centratech</p></center>
+      <a href="#">
+        <img src="{{ url_for('static', filename='images/github.png') }}" alt="Kai Stullich Github" class="img-size">
+      </a>
+    </div>
+  </div>
+</div>
+</div> <!-- END Container -->
+<!-- END Bryant About -->
 
 <!-- START FOOTER -->
 <footer>

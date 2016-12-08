@@ -20,5 +20,5 @@ class ProductForm(Form):
 	price = DecimalField('Price', validators=[InputRequired(), NumberRange(min=Decimal('0.0'))])
 	rating = DecimalField('Product Rating', validators=[InputRequired(), NumberRange(min=Decimal('0.0'))])
 	year = IntegerField('Production Year', validators=[InputRequired(), NumberRange(min=0)])
-	stock = IntegerField('Available Stock', validators=[InputRequired(), NumberRange(min=0)])
+	stock = IntegerField('Available Stock', validators=[InputRequired(), NumberRange(min=1)])
 	image = TextField('Image URL', validators=[InputRequired()])
