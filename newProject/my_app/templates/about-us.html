@@ -27,9 +27,24 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-4 img-box-kai"> <!-- Main Box -->
-      <div class="kai-img"></div> <!-- Image Box -->
-      <div class="kai-text"></div> <!-- Title Text Box -->
-      <div class="kai-link-img"></div> <!-- Link Images Box -->
+      <div class="kai-img"> <!-- Image Box -->
+        <img src="{{ url_for('static', filename='images/kai4.JPG') }}" alt="Kai Stullich">
+      </div>
+      <div class="kai-text"> <!-- Title Text Box -->
+        <center><h3><b>Kai Stullich</b></h3></center>
+        <center><h4>Lead Web Developer</h4></center>
+      </div> 
+      <div class="kai-link-img"> <!-- Link Images Box -->
+        <a href="https://github.com/kaistullich">
+          <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub Logo">
+        </a>
+        <a href="https://www.linkedin.com/in/kai-stullich-a0697a91?trk=nav_responsive_tab_profile_pic">
+          <img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="LinkedIn Logo">
+        </a>
+        <a href="https://twitter.com/k_stullich">
+          <img src="{{ url_for('static', filename='images/twitter.png') }}" alt="Twitter Logo">
+        </a>
+      </div>
     </div>
 
     <div class="col-xs-4 img-box-lucas"> <!-- Main Box -->
