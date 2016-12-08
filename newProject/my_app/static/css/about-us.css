@@ -1,38 +1,94 @@
 @import url('https://fonts.googleapis.com/css?family=Yellowtail');
 
-#kai-name {
-    font-family: 'Yellowtail', cursive;
-    font-size: 32px;
-    padding-top: 150px;
+.img-box-kai {
+    height: 450px;
+    border: 3px solid red;
+    background-color: #F1F1F1;
 }
 
-#kai-body {
-    font-size: 20px;
+.img-box-lucas {
+    height: 450px;
+    border: 3px solid red;
+    background-color: #F1F1F1;
 }
 
-#lucas-name {
-    font-family: 'Yellowtail', cursive;
-    font-size: 32px;
-    text-align: center;
-    padding-top: 180px;
+.img-box-bryant {
+    height: 450px;
+    border: 3px solid red;
+    background-color: #F1F1F1;
 }
 
-#lucas-body {
-    font-size: 20px;
-    text-align: center;
+.kai-img {
+    height: 200px;
+    width: 200px;
+    border: 2px solid green;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-left: 70px;
 }
 
-#bryant-name {
-    font-family: 'Yellowtail', cursive;
-    font-size: 32px;
-    padding-top: 150px;
+.lucas-img {
+    height: 200px;
+    width: 200px;
+    border: 2px solid green;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-left: 70px;
 }
 
-#bryant-body {
-    font-size: 20px;
+.bryant-img {
+    height: 200px;
+    width: 200px;
+    border: 2px solid green;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-left: 70px;
 }
 
-.img-size {
-    height: 10000px;
-    
+.kai-text {
+    height: 80px;
+    width: 330px;
+    border: 2px solid darkorange;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.lucas-text {
+    height: 80px;
+    width: 330px;
+    border: 2px solid darkorange;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.bryant-text {
+    height: 80px;
+    width: 330px;
+    border: 2px solid darkorange;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.kai-link-img {
+    height: 80px;
+    width: 330px;
+    border: 2px solid blue;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.lucas-link-img {
+    height: 80px;
+    width: 330px;
+    border: 2px solid blue;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.bryant-link-img {
+    height: 80px;
+    width: 330px;
+    border: 2px solid blue;
+    margin-top: 20px;
+    margin-left: 15px;
 }
