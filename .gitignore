@@ -1,6 +1,9 @@
 .DS_Store
 Centratech.sqlite
 */__pycache__/*
+newProject/.vscode/
+newProject/env/
+newProject/hashDB.db
 =======
 # Byte-compiled / optimized / DLL files
 __pycache__/
