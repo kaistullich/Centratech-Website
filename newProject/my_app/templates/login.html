@@ -1,40 +1,21 @@
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% extends 'navbar.html' %}
+
+{% block container %}
+<!DOCTYPE HTML>
+<head>
+    <title>ADMIN LOGIN</title>
+</head>
 <body style="background-color: lightgrey">
 <div class="top-pad">
     <div class="well">
-        <form action="{{url_for('my_view.home') }}" role="form">
-            <div class="imgcontainer">
-                <h2>ADMIN LOGIN</h2>
-            </div>
-
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="userid"  required>
-
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="pswrd" required>
-    
-            <center><input type="button" onclick="check(this.form)" value="Login"/></center>
-            <center><input type="reset" value="Reset"/></center>
-            <div class="container">
-                <center>
-                    <a href="{{ url_for('my_view.home') }}" style="text-decoration: none; color: black; font-size: 15px;">
-                        <button type="button" class="cancelbtn">HOME</button>
-                    </a>
-                </center>
-            </div>
+        <form action="" role="form" method="POST">
+            <h2>ADMIN LOGIN</h2>
+            <label><b>Username:</b></label>
+            <input type="text" placeholder="Enter Username" name="username" value="{{ request.form.username }}"><br>
+            <label><b>Password: </b></label>
+            <input type="password" placeholder="Enter Password" name="password" value="{{ request.form.password }}"><br>
+            <input class="btn btn-primary" type="submit" value="Login">
         </form>
-        <script language="javascript">
-            /* Checks whether the input fields are admin/admin */
-            function check(form) {
-                if(form.userid.value == "admin" && form.pswrd.value == "admin") {
-                    window.location.href = "products";
-                }
-                else {
-                    alert("Error Password or Username Incorrect")
-                }
-            }
-        </script>
     </div>
 </div>
 </body>

@@ -1,4 +1,4 @@
-from flask import Flask, flash, redirect, render_template, request, session, abort, Blueprint, url_for
+from flask import Flask, flash, redirect, render_template, request, session, abort, Blueprint, url_for, flash
 import my_app.source.views_products as product_view
 import my_app.source.views_categories as category_view
 from my_app.source.models import cursor, conn
@@ -109,13 +109,13 @@ def product_search():
 
 @my_view.route('/login', methods=['GET', 'POST'])
 def login():
-	error = None
-	if request.method == 'POST':
-		if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-			error = 'Username or Password is incorrect. Please try again'
-		else:
-			return redirect(url_for('@my_view.home'))
-	return render_template('login.html', error=error)
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            flash('Username or Password is incorrect! Please try again')
+        else:
+            return redirect(url_for('my_view.home'))
+    return render_template('login.html', error=error)
 
 # ========================================================
 # ----------------- NAVBAR DROPDOWN SEARCH BOX -----------
