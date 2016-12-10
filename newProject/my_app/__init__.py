@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 import my_app.source.views
 from my_app.source.views import my_view
@@ -8,7 +9,8 @@ from flask_admin.contrib import sqla
 from wtforms import fields, widgets
 
 app = Flask(__name__)
-app.secret_key = 'some_random_key'
+# Creates random generated key
+app.secret_key = os.urandom(24)
 
 app.register_blueprint(my_view)
 
