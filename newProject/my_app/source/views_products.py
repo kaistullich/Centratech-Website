@@ -93,5 +93,10 @@ def product_search():
 
 # ------------------- SHOPPING CART ---------------------------
 
-def cart():
-    return render_template('cart.html')
+def addToCart():
+    command = """ SELECT {a}.id, {a}.brand, {a}.name, {a}.price, {a}.image
+                  FROM {a} """.format(a='product')
+    cursor.execute(command)
+    cart_data = cursor.fetchall()
+
+    return render_template('cart.html', cart_data=cart_data)
