@@ -32,12 +32,6 @@ class CKTextAreaField(fields.TextAreaField):
     widget = CKTextAreaWidget()
 
 class Product(db.Model):
-    form_widget_args = {
-        'description': {
-            'rows': 10,
-            'class': 'input-xlarge'
-        }
-    }
     brand = db.Column(db.String(120))
     name = db.Column(db.String(120))
     price = db.Column(db.Float)
@@ -46,7 +40,7 @@ class Product(db.Model):
     year = db.Column(db.Integer)
     stock = db.Column(db.Integer)
     image = db.Column(db.String(300))
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     description = db.Column(db.UnicodeText())
         
 
