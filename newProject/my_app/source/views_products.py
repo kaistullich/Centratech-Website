@@ -17,7 +17,7 @@ def products():
 # ------------------------SINGLE product ---------------------
 def product(key):    
     # selects all columns shown
-    command = """SELECT {a}.id, {a}.name, {a}.price, {b}.name, {a}.image, {a}.stock
+    command = """SELECT {a}.id, {a}.name, {a}.price, {b}.name, {a}.image, {a}.stock, {a}.description
                       FROM {a} 
                       JOIN {b} 
                       ON {a}.category_id = {b}.id
