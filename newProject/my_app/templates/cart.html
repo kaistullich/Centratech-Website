@@ -4,6 +4,8 @@
 <head>
     <title>Shopping Cart</title>
     <link rel="stylehseet" type="text/css" href="{{ url_for('static', filename='css/cart.css') }}">
+    <!-- Font Awesome Icon -->
+	<script src="https://use.fontawesome.com/73a1b37249.js"></script>
 </head>
 
 <body>
@@ -11,11 +13,18 @@
     <div class="top-pad">
         <div class="well">
             <center><h2>Shopping Cart</h2></center>
-            <ul>
-            {% for item in items %}
-                <li>{{ item }}</li>
+            {% for item in cart_data %}
+            <center>
+            <div class="row">
+                <div class="col-md-4" style="border: 2px solid cadetblue">
+                    <img src="{{ item[4] }}" alt="{{ item[2] }}" width="100%" height="100%">
+                    <p><b><i><u>{{ item[2] }} - {{ item[1] }}</u></i></b></p>
+                    <p><b>Price:</b></p><p style="color:red"><i class="fa fa-usd" aria-hidden="true"></i>{{ item[3] }} </p>
+                    <p><b>Quantity added:</b></p> <p> {{ quantityList[loop.index0] }} </p>
+                </div>
+            </div><br>
+            </center>
             {% endfor %}
-            </ul>
         </div>
     </div>
 </div>

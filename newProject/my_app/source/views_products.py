@@ -1,3 +1,4 @@
+from __future__ import print_function
 from flask import render_template, request, flash
 from my_app.source.models import cursor, conn
 
@@ -93,10 +94,31 @@ def product_search():
 
 # ------------------- SHOPPING CART ---------------------------
 
-def addToCart():
-    command = """ SELECT {a}.id, {a}.brand, {a}.name, {a}.price, {a}.image
-                  FROM {a} """.format(a='product')
-    cursor.execute(command)
-    cart_data = cursor.fetchall()
+def buildCondition(item_map):
+    if len( item_map ) == 1:
+        return "product.id = {a}".format(a=str(item_map[0]['id']))
+    
+    condition = "product.id = {a}".format(a=str(item_map[0]['id']))
+    for item in item_map:
+        condition += " OR product.id = {a}".format(a=str(item['id']))
+    return condition
 
-    return render_template('cart.html', cart_data=cart_data)
+def buildQuantityList(item_map):
+    quantityList = []
+    for item in item_map:
+        print ('Item', item)
+        quantityList.append(item['quantity'])
+    return quantityList
+
+def cart(item_map):
+    if len(item_map) > 0:
+        condition = buildCondition(item_map)
+        quantityList = buildQuantityList(item_map)
+        print (quantityList)
+        command = """ SELECT {a}.id, {a}.brand, {a}.name, {a}.price, {a}.image
+                  FROM {a} WHERE {b}""".format(a='product', b=condition)
+        print (command)
+        cursor.execute(command)
+        cart_data = cursor.fetchall()
+        return render_template('cart.html', cart_data=cart_data, quantityList=quantityList)
+    return render_template('cart.html')

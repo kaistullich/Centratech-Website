@@ -184,16 +184,28 @@ def returns():
 def cart():
     return render_template('cart.html')
 
+def containsKey(items, key):
+    for item in items:
+        if item['id'] == key:
+            return item
+    return None
+
 @my_view.route('/add-to-cart/<key>')
 def addToCart(key):
-    if 'cart-items' not in session:
-        items = []
-        items.append(key)
-        session['cart-items'] = items
-        print('Init Items: ', items )
-        return render_template('cart.html', items=items)
-    else:
+    if 'cart-items' in session:
         items = session['cart-items']
-        items.append(key)
-        print('Items:', items)
-        return render_template('cart.html', items=items)
+        item = containsKey(items, key)
+        if item is not None:
+            item['quantity'] = item['quantity'] + 1
+        else:
+            items.append({'id':key, 'quantity':1})
+        
+        session['cart-items'] = items
+        print('Items:', session['cart-items'])
+        return product_view.cart(session['cart-items'])
+    else:
+        items = []
+        items.append({'id':key, 'quantity':1})
+        session['cart-items'] = items
+        print('Init Items:', session['cart-items'])
+        return product_view.cart(session['cart-items'])
