@@ -15,7 +15,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/Kai/Github_Projects/ce
 app.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(app)
 
-admin = Admin(app)
+admin = Admin(app, template_mode='bootstrap3')
 class Product(db.Model):
     brand = db.Column(db.String(120))
     name = db.Column(db.String(120))
