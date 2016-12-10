@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/product-one.css') }}">
 		<div class="top-pad">
       <h1> {{ single_product[1] }} </h1><br><br>
+      <button type="submit"><a href="{{ url_for('my_view.addToCart', key=single_product[0]) }}"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Add to Cart</a></button>
 			<center><img src="{{ single_product[4] }}" style="width:440px;height:300px"></center>
 			<p><b>Category:</b> {{ single_product[3] }}</p>
 			<p><b>Price:</b> ${{ single_product[2] }}</p>
