@@ -5,7 +5,6 @@ from my_app.source.models import cursor, conn
 
 my_view = Blueprint('my_view' , __name__)
 
-
 # ========================================================
 # ----------------- HOME PAGE LAYOUT ---------------------
 # ========================================================
@@ -114,7 +113,7 @@ def login():
         if request.form['username'] != 'admin' or request.form['password'] != 'admin':
             flash('Username or Password is incorrect! Please try again')
         else:
-            return redirect(url_for('my_view.home'))
+            return redirect(url_for('admin.index'))
     return render_template('login.html', error=error)
 
 # ========================================================

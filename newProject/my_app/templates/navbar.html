@@ -28,47 +28,29 @@
 				      <ul class="nav navbar-nav">
 					        <li><a href="{{ url_for('my_view.products') }}" style="font-size:20px; color:white;">Products <span class="sr-only">(current)</span></a></li>
 					        <li><a href="{{ url_for('my_view.categories') }}" style="font-size:20px; color:white;">Departments</a></li>
-					        <li class="dropdown">
-					        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size:20px; color:white;">Product Editing<span class="caret"></span></a>
-					        <!-- Product Editing -->
-					          <ul class="dropdown-menu">
-						            <li><a href="{{ url_for('my_view.product_create') }}">Create Product</a></li>
-						            <li role="separator" class="divider"></li>
-						            <li><a href="{{url_for('my_view.product_delete') }}">Delete Product</a></li>
-					          </ul>
-					        </li>
-					        <!-- Category Editing -->
-					        <li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopu="true" aria-expanded="false" style="font-size:20px; color:white;">Category Editing<span class="caret"></span></a>
-								  <ul class="dropdown-menu">
-								       <li><a href="{{ url_for('my_view.category_create') }}">Create Category</a></li>
-								       <li role="separator" class="divider"></li>
-								       <li><a href="{{ url_for('my_view.category_delete') }}">Delete Category</a></li>
-								  </ul>
-							</li>
 						<!-- LOGIN BUTTON -->
 						<li><a href="{{ url_for('my_view.login') }}" style="font-size:20px; color:white;">Login</a></li>
 				    <form class="navbar-form navbar-left" action="{{ url_for('my_view.product_search') }}" method="GET">
 			        <div class="form-group">
 			        	<div class="row">
-					    			<div class="input-group">
-					      			<div class="input-group-btn">
-					        		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <span class="caret"></span></button>
-					        		<ul class="dropdown-menu">
-												<li><a href="#">Laptops</a></li>
-												<li><a href="#">Cameras</a></li>
-												<li><a href="#">Gaming</a></li>
-												<li><a href="#">Networking</a></li>
-												<li><a href="#">Tools</a></li>
-												<li><a href="#">Headphones</a></li>
-												<li><a href="#">Speakers</a></li>
-												<li><a href="#">Miscellaneous</a></li>
-												<li><a href="#">Blu-Ray</a></li>
-											</ul>
-					       		</div><!-- /Dropdown Button -->
-					      		<input type="text" name="name" class="form-control" placeholder="Search Products...">
-					    		</div><!-- /input-group -->
-					    		<button type="submit" class="btn btn-default">Submit</button>
+							<div class="input-group">
+							<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <span class="caret"></span></button>
+							<ul class="dropdown-menu">
+										<li><a href="#">Laptops</a></li>
+										<li><a href="#">Cameras</a></li>
+										<li><a href="#">Gaming</a></li>
+										<li><a href="#">Networking</a></li>
+										<li><a href="#">Tools</a></li>
+										<li><a href="#">Headphones</a></li>
+										<li><a href="#">Speakers</a></li>
+										<li><a href="#">Miscellaneous</a></li>
+										<li><a href="#">Blu-Ray</a></li>
+									</ul>
+						</div><!-- /Dropdown Button -->
+						<input type="text" name="name" class="form-control" placeholder="Search Products...">
+						</div><!-- /input-group -->
+						<button type="submit" class="btn btn-default">Submit</button>
 			         </div>
 			      	</div>
 			       </form><!-- END SEARCH FUNCTION -->
