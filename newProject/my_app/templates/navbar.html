@@ -10,6 +10,9 @@
 	<!-- My OWN stylesheet -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home_page.css') }}"> 
 
+	<!-- Font Awesome Icon -->
+	<script src="https://use.fontawesome.com/73a1b37249.js"></script>
+
 </head>
 <body>
 	<header class="navbar navbar-fixed-top" role="banner" style="background-color: cadetblue;">
@@ -28,9 +31,8 @@
 				      <ul class="nav navbar-nav">
 					        <li><a href="{{ url_for('my_view.products') }}" style="font-size:20px; color:white;">Products <span class="sr-only">(current)</span></a></li>
 					        <li><a href="{{ url_for('my_view.categories') }}" style="font-size:20px; color:white;">Departments</a></li>
-						<!-- LOGIN BUTTON -->
-						<li><a href="{{ url_for('my_view.login') }}" style="font-size:20px; color:white;">Login</a></li>
-				    <form class="navbar-form navbar-left" action="{{ url_for('my_view.product_search') }}" method="GET">
+						<li><a href="{{ url_for('my_view.login') }}" style="font-size:20px; color:white;">Login</a></li> <!-- LOGIN BUTTON -->
+					<form class="navbar-form navbar-left" action="{{ url_for('my_view.product_search') }}" method="GET">
 			        <div class="form-group">
 			        	<div class="row">
 							<div class="input-group">
@@ -54,7 +56,8 @@
 			         </div>
 			      	</div>
 			       </form><!-- END SEARCH FUNCTION -->
-						  </ul>
+				   <li><a href="{{ url_for('my_view.cart') }}" style="color:white; font-size:20px; margin-left:226px; li a:hover; none"><i class="fa fa-cart-arrow-down" aria-hidden="true" style="color:black; margin-right:5px"></i>Cart</a></li> <!-- Shopping Cart -->
+				  	</ul>
 				  <!-- SEARCH FUNCTION -->
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
