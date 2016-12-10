@@ -174,3 +174,11 @@ def contact():
 @my_view.route('/returns')
 def returns():
     return render_template('returns.html')
+
+# ========================================================
+# ----------------- SHOPPING CART ------------------------
+# ========================================================
+
+@my_view.route('/cart')
+def cart():
+    return (product_view.cart())

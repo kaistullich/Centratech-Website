@@ -90,3 +90,8 @@ def product_search():
     product_data = cursor.fetchall()
     # When user hits submit on search it will render template with the returned searches
     return render_template('products.html', my_list=product_data)
+
+# ------------------- SHOPPING CART ---------------------------
+
+def cart():
+    return render_template('cart.html')
