@@ -1,3 +1,4 @@
+from __future__ import print_function
 from flask import Flask, flash, redirect, render_template, request, session, abort, Blueprint, url_for, flash
 import my_app.source.views_products as product_view
 import my_app.source.views_categories as category_view
@@ -136,8 +137,8 @@ def terms():
     return render_template('terms.html')
 
 #==============================================================
-#=====================PRIVACY PAGE===========================
-#===========================================================
+#=====================PRIVACY PAGE=============================
+#==============================================================
 
 @my_view.route('/privacy')
 def privacy():
@@ -181,4 +182,18 @@ def returns():
 
 @my_view.route('/cart')
 def cart():
-    return (product_view.cart())
+    return render_template('cart.html')
+
+@my_view.route('/add-to-cart/<key>')
+def addToCart(key):
+    if 'cart-items' not in session:
+        items = []
+        items.append(key)
+        session['cart-items'] = items
+        print('Init Items: ', items )
+        return render_template('cart.html', items=items)
+    else:
+        items = session['cart-items']
+        items.append(key)
+        print('Items:', items)
+        return render_template('cart.html', items=items)
