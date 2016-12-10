@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template
 from my_app.source.models import cursor, conn
 
 #-------------------- Category Handler --------------------
