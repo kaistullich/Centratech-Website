@@ -11,9 +11,6 @@ def categories():
     
     return render_template('categories.html', my_list=category_data)
 
-
-
-
 #-------------------- Category Key Handler --------------------
 def category(key):
     command = """ SELECT *
@@ -33,8 +30,6 @@ def category(key):
     return render_template('category.html', category_id=key, category_name=category_name, 
                             my_list=product_data)
 
-
-
 # ------------------ Contact Us Phone Numbers -------------------
 def contact_us():
     command = """ SELECT name, deptPhone, deptLine, deptMang
@@ -43,6 +38,3 @@ def contact_us():
     phone_numbers = cursor.fetchall()
 
     return render_template('contact.html', categories=phone_numbers)
-
-# ----------------------------------------------------------------
-    

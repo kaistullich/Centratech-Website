@@ -13,6 +13,7 @@ app.register_blueprint(my_view)
 app.config['DATABASE_FILE'] = 'Centratech.sqlite'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/Kai/Github_Projects/centratech-web/newProject/Centratech.sqlite'
 app.config['SQLALCHEMY_ECHO'] = True
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
 admin = Admin(app, template_mode='bootstrap3')

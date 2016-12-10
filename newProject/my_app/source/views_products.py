@@ -14,8 +14,6 @@ def products():
 	# takes 'command' and renders the template products.html
 	return render_template('products.html', my_list=product_data)
 
-
-
 # ------------------------SINGLE product ---------------------
 def product(key):    
     # selects all columns shown
@@ -34,8 +32,6 @@ def product(key):
     item = product_data[0]    
     # renders template to show a single product
     return render_template('product.html', single_product=item, key=key)
-
-
 
 # ------------------ PRODUCT SEARCHING ---------------------------
 # Product Search Function
