@@ -4,6 +4,7 @@ Centratech.sqlite
 newProject/.vscode/
 newProject/env/
 newProject/hashDB.db
+newProject/bower_components/
 =======
 # Byte-compiled / optimized / DLL files
 __pycache__/
