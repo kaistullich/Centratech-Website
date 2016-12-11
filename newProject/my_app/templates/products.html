@@ -19,7 +19,13 @@
         <p style="text-align: center;"><b>Brand:</b> {{ product[1] }}</p>
         <p style="text-align: center;"><b>Price:</b> ${{ product[3] }}</p>
         <center><p><a href="{{ url_for('my_view.product', key=product[0]) }}" class="btn btn-primary" role="button">View Product</a></p></center>
-        <center><button type="submit"><a href="{{ url_for('my_view.addToCart', key=product[0]) }}"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Add to Cart</a></button></center>
+        <center>
+          <form action="{{ url_for('my_view.addToCart', key=product[0]) }}" method="POST">
+          <button type="submit" method="POST">
+              <i class="fa fa-cart-arrow-down" aria-hidden="true">Add to Cart</i>
+          </button>
+          </form>
+        </center>
       </div>
     </div>
   </div>
