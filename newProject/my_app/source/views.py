@@ -180,8 +180,20 @@ def returns():
 # ----------------- SHOPPING CART ------------------------
 # ========================================================
 
-@my_view.route('/cart')
+def cleanCartData(cart_data):
+    cleaned = []
+    for item in cart_data:
+        print (item)
+        cleanItem = item.strip(" \\")
+        cleaned.append(cleanItem)
+    return cart_data
+
+@my_view.route('/cart/')
 def cart():
+    if 'cart_data' in session and 'quantityList' in session:
+        cart_data = session['cart_data']
+        quantityList = session['quantityList']
+        return render_template('cart.html', cart_data=cart_data, quantityList=quantityList)
     return render_template('cart.html')
 
 def containsKey(items, key):
@@ -190,7 +202,7 @@ def containsKey(items, key):
             return item
     return None
 
-@my_view.route('/add-to-cart/<key>')
+@my_view.route('/add-to-cart/<key>', methods=['POST'])
 def addToCart(key):
     if 'cart-items' in session:
         items = session['cart-items']
@@ -201,11 +213,9 @@ def addToCart(key):
             items.append({'id':key, 'quantity':1})
         
         session['cart-items'] = items
-        print('Items:', session['cart-items'])
-        return product_view.cart(session['cart-items'])
+        return product_view.addToCart(session['cart-items'])
     else:
         items = []
         items.append({'id':key, 'quantity':1})
         session['cart-items'] = items
-        print('Init Items:', session['cart-items'])
-        return product_view.cart(session['cart-items'])
+        return product_view.addToCart(session['cart-items'])

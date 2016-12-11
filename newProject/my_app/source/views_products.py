@@ -1,5 +1,5 @@
 from __future__ import print_function
-from flask import render_template, request, flash
+from flask import render_template, request, flash, redirect, url_for, session
 from my_app.source.models import cursor, conn
 
 #------------------------ SHOW ALL products-------------------
@@ -106,19 +106,18 @@ def buildCondition(item_map):
 def buildQuantityList(item_map):
     quantityList = []
     for item in item_map:
-        print ('Item', item)
         quantityList.append(item['quantity'])
     return quantityList
 
-def cart(item_map):
+def addToCart(item_map):
     if len(item_map) > 0:
         condition = buildCondition(item_map)
         quantityList = buildQuantityList(item_map)
-        print (quantityList)
         command = """ SELECT {a}.id, {a}.brand, {a}.name, {a}.price, {a}.image
                   FROM {a} WHERE {b}""".format(a='product', b=condition)
-        print (command)
         cursor.execute(command)
         cart_data = cursor.fetchall()
-        return render_template('cart.html', cart_data=cart_data, quantityList=quantityList)
+        session['cart_data'] = cart_data
+        session['quantityList'] = quantityList
+        return redirect(url_for('my_view.cart'))
     return render_template('cart.html')
