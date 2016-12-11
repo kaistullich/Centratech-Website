@@ -194,7 +194,7 @@ def cart():
         cart_data = session['cart_data']
         quantityList = session['quantityList']
         return render_template('cart.html', cart_data=cart_data, quantityList=quantityList)
-    return render_template('cart.html')
+    return render_template('empty_cart.html')
 
 def containsKey(items, key):
     for item in items:
