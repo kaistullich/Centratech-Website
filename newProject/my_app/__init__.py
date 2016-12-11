@@ -44,7 +44,6 @@ class Product(db.Model):
     image = db.Column(db.String(300))
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     description = db.Column(db.UnicodeText())
-        
 
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -57,6 +56,15 @@ class ProductEdit(ModelView):
     form_overrides = dict(description=CKTextAreaField)
     create_template = 'create.html'
     edit_template = 'edit.html'
+
+    def _description_formatter(view, context, model, name):
+        if model.description is None:
+            return ""
+        return model.description[:20] if len(model.description) > 20 else model.description
+
+    column_formatters = {
+        'description': _description_formatter,
+    }     
 
 admin.add_view(ProductEdit(Product, db.session))
 admin.add_view(ModelView(Category, db.session))
