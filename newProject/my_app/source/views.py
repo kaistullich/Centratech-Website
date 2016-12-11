@@ -180,33 +180,34 @@ def returns():
 # ----------------- SHOPPING CART ------------------------
 # ========================================================
 
-def cleanCartData(cart_data):
-    cleaned = []
-    for item in cart_data:
-        print (item)
-        cleanItem = item.strip(" \\")
-        cleaned.append(cleanItem)
-    return cart_data
-
+# Links to cart 
 @my_view.route('/cart/')
 def cart():
+    # Verifies if the cart is empty or not
     if 'cart_data' in session and 'quantityList' in session:
+        # Grabbing the cart data from the session (its a list)
         cart_data = session['cart_data']
+        # Grabbing quantityList from the session (its a list)
         quantityList = session['quantityList']
+        # renders cart template, and passes in cart_data & quantityList as parameter
         return render_template('cart.html', cart_data=cart_data, quantityList=quantityList)
     return render_template('empty_cart.html')
 
-def containsKey(items, key):
+# Checks to see if product ID is in session list 
+def findItemInCart(items, key):
     for item in items:
         if item['id'] == key:
             return item
+    # if item isnt found, returns nothing
     return None
 
+# Passes product ID into add-to-cart
 @my_view.route('/add-to-cart/<key>', methods=['POST'])
 def addToCart(key):
+
     if 'cart-items' in session:
         items = session['cart-items']
-        item = containsKey(items, key)
+        item = findItemInCart(items, key)
         if item is not None:
             item['quantity'] = item['quantity'] + 1
         else:
@@ -219,3 +220,9 @@ def addToCart(key):
         items.append({'id':key, 'quantity':1})
         session['cart-items'] = items
         return product_view.addToCart(session['cart-items'])
+
+@my_view.route('/drop-session', methods=['POST'])
+def dropSession():
+    session.pop('cart-items', None)
+    session.pop('quantityList', None)
+    return redirect(url_for('my_view.cart'))
