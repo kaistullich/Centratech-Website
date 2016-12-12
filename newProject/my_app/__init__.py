@@ -19,6 +19,7 @@ app.register_blueprint(my_view)
 app.config['DATABASE_FILE'] = 'Centratech.sqlite'
 # Show full path to where DB is located
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/Kai/Github_Projects/centratech-web/newProject/Centratech.sqlite'
+# SQAlchemy Debug Purpose   
 app.config['SQLALCHEMY_ECHO'] = True
 # Supress warning when running app (SQLAlchemy uses significant overhead)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
@@ -51,6 +52,7 @@ class Product(db.Model):
     image = db.Column(db.String(300))
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     description = db.Column(db.UnicodeText())
+
 # Create models (the Category 'page' in Admin view)
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -58,6 +60,7 @@ class Category(db.Model):
     deptPhone = db.Column(db.Integer)
     deptLine = db.Column(db.Integer)
     deptMang = db.Column(db.String(50))
+
 # Create class to be able to use the WYSIWYG editor
 class ProductEdit(ModelView):
     form_overrides = dict(description=CKTextAreaField)
@@ -65,9 +68,10 @@ class ProductEdit(ModelView):
     edit_template = 'edit.html'
     # Formats the description columns since it will be very long
     def _description_formatter(view, context, model, name):
-        # If the description column in empty it will place an empty string for formatting purposes
+        # If the description column is empty it will place an empty string for formatting purposes
         if model.description is None:
             return ""
+        # If description column is not empty, it will only show up to 19 characters
         return model.description[:20]
         
     column_formatters = {
