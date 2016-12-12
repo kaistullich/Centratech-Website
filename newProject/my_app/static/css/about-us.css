@@ -13,7 +13,6 @@
     border: 3px solid cadetblue;
     background-color: #F1F1F1;
 }
-
 .img-box-bryant {
     margin-bottom: 70px;
     height: 450px;
@@ -28,13 +27,24 @@
     margin-top: 20px;
     margin-left: 70px;
 }
-
+.bryant-img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-left: 70px;
+}
 .kai-img img {
     border-radius: 50%;
     height: 208px;
     width: 223px;
 }
 
+.bryant-img img {
+    border-radius: 50%;
+    height: 208px;
+    width: 223px;
+}
 .lucas-img img {
     border-radius: 50%;
     height: 208px;
@@ -49,16 +59,16 @@
     margin-left: 70px;
 }
 
-.bryant-img {
-    height: 200px;
-    width: 200px;
-    border: 2px solid green;
-    border-radius: 50%;
-    margin-top: 20px;
-    margin-left: 70px;
-}
+
 
 .kai-text {
+    height: 80px;
+    width: 330px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.bryant-text {
     height: 80px;
     width: 330px;
     margin-top: 20px;
@@ -68,20 +78,20 @@
 .lucas-text {
     height: 80px;
     width: 330px;
-    border: 2px solid darkorange;
-    margin-top: 20px;
-    margin-left: 15px;
-}
-
-.bryant-text {
-    height: 80px;
-    width: 330px;
-    border: 2px solid darkorange;
+    border: 2px ;
     margin-top: 20px;
     margin-left: 15px;
 }
 
 .kai-link-img {
+    height: 80px;
+    width: 330px;
+    margin-top: 20px;
+    margin-left: 15px;
+    text-align: center;
+    padding-top: 20px;
+}
+.bryant-link-img {
     height: 80px;
     width: 330px;
     margin-top: 20px;
@@ -95,19 +105,17 @@
     height: 50px;
     width: 50px;
 }
+.bryant-link-img img{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
 
 .lucas-link-img {
     height: 80px;
     width: 330px;
-    border: 2px solid blue;
+    border: 2px ;
     margin-top: 20px;
     margin-left: 15px;
 }
 
-.bryant-link-img {
-    height: 80px;
-    width: 330px;
-    border: 2px solid blue;
-    margin-top: 20px;
-    margin-left: 15px;
-}

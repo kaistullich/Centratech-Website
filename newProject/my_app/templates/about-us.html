@@ -60,9 +60,22 @@
     </div>
 
     <div class="col-xs-4 img-box-bryant"> <!-- Main Box -->
-      <div class="bryant-img"></div> <!-- Image Box -->
-      <div class="bryant-text"></div> <!-- Title Text Box -->
-      <div class="bryant-link-img"></div> <!-- Link Images Box -->
+      <div class="bryant-img"> <!-- Image Box -->
+        <img src="{{ url_for('static', filename='images/Bryantprofpic.JPG') }}" alt="Bryant Thach">
+      </div>
+      <div class="kai-text"> <!-- Title Text Box -->
+        <center><h3><b>Bryant Thach</b></h3></center>
+        <center><h4>Web Designer</h4></center>
+        <center><h5><u><i>Follow me here:</i></u></h5></center>
+      </div> 
+      <div class="bryant-link-img"> <!-- Link Images Box -->
+        <a href="https://www.linkedin.com/in/bryant-thach-77491770?trk=nav_responsive_tab_profile">
+          <img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="LinkedIn Logo">
+        </a>
+        <a href="https://twitter.com/MrBryanthach">
+          <img src="{{ url_for('static', filename='images/twitter.png') }}" alt="Twitter Logo">
+        </a>
+      </div>
     </div>
 
   </div>
