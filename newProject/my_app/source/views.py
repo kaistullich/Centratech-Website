@@ -191,6 +191,7 @@ def cart():
         quantityList = session['quantityList']
         # renders cart template, and passes in cart_data & quantityList as parameter
         return render_template('cart.html', cart_data=cart_data, quantityList=quantityList)
+    # If cart is empty it will render this template
     return render_template('empty_cart.html')
 
 # Checks to see if product ID is in session list 
@@ -221,6 +222,9 @@ def addToCart(key):
         session['cart-items'] = items
         return product_view.addToCart(session['cart-items'])
 
+# ========================================================
+# ----------------- DROP SESSION  ------------------------
+# ========================================================
 @my_view.route('/drop-session', methods=['POST'])
 def dropSession():
     session.pop('cart-items', None)
