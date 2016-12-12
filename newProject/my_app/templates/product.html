@@ -23,47 +23,6 @@
 		</div>
 	</div>
 </div>
-<!-- START FOOTER -->
-<footer>
-	<div class="container text-center">
-    <hr />
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="col-md-3">
-        <ul class="nav nav-pills nav-stacked">
-          <li><a href="{{ url_for('my_view.about_us') }}">About Us</a></li>
-          <li><a href="{{ url_for('my_view.contact')}}">Contact</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <ul class="nav nav-pills nav-stacked">
-          <li><a href="{{ url_for('my_view.terms')}}">Terms of Service</a></li>
-          <li><a href="{{ url_for('my_view.privacy')}}">Privacy & Legal</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <ul class="nav nav-pills nav-stacked">
-          <li><a href="{{ url_for('my_view.shipping')}}">Shipping Policy</a></li>
-          <li><a href="{{ url_for('my_view.returns')}}">Returns & Replacement</a></li>    
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <ul class="nav nav-pills nav-stacked">
-          <li><a href="{{ url_for('my_view.products')}}">Products</a></li>
-          <li><a href="{{ url_for('my_view.categories')}}">Categories</a></li>
-        </ul>
-      </div>  
-    </div>
-  </div>
-  <hr>
-    <div class="row">
-        <div class="col-lg-12">
-            <ul class="nav nav-pills nav-justified">
-                <li><a href="{{ url_for('my_view.home') }}">© 2016 Centratech Electronics.</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-</footer> <!-- END FOOTER -->
+{% include 'footer.html' %}
 </body>
 {% endblock %}
