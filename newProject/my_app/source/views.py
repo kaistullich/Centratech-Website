@@ -1,4 +1,3 @@
-from __future__ import print_function
 import sys
 import logging
 from flask import Flask, flash, redirect, render_template, request, session, abort, Blueprint, url_for
@@ -7,6 +6,7 @@ import my_app.source.views_categories as category_view
 from my_app.source.models import cursor, conn
 from my_app.source.models import RegistrationForm
 from passlib.hash import sha256_crypt
+
 my_view = Blueprint('my_view' , __name__)
 
 # LOGGING LEVELS:
@@ -19,7 +19,7 @@ my_view = Blueprint('my_view' , __name__)
 
 logging.basicConfig(filename='logfile.log', format='\n%(asctime)s %(message)s')
 
-# formatting the way the output of the log will be 
+# formatting the output of the log
 def error_handling():
     return ('\n{}. {}, @ line: {}'.format( sys.exc_info()[0],
                                      sys.exc_info()[1],
@@ -147,12 +147,11 @@ def register_page():
         if request.method == "POST" and form.validate():
             username  = form.username.data
             email = form.email.data
-            password = sha256_crypt.encrypt((str(form.password.data)))
+            salt = '@uI2Gg3ezB0o0o!i!@'
+            password = sha256_crypt.encrypt((str(form.password.data)+salt))
 
             username_query = cursor.execute("SELECT user_username FROM registered_users WHERE user_username = (?)", (username,))
             username_check = cursor.fetchall()
-            print (username_check)
-            print (type(username_check))
 
             if int(len(username_check)) > 0:
                 flash("Sorry that username is already taken, please choose another!")
