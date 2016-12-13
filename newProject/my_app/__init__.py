@@ -25,7 +25,6 @@ app.config['SQLALCHEMY_ECHO'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 # Pass Flask App into SQLAlchemy
 db = SQLAlchemy(app)
-
 # Creating the admin navabar with Boostrap
 admin = Admin(app, template_mode='bootstrap3')
 
