@@ -7,6 +7,7 @@ from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from flask_admin.contrib import sqla
 from wtforms import fields, widgets
+import flask_restless
 
 # Create the app
 app = Flask(__name__)
@@ -79,3 +80,20 @@ class ProductEdit(ModelView):
 # Add views
 admin.add_view(ProductEdit(Product, db.session))
 admin.add_view(ModelView(Category, db.session))
+
+# Create the Flask-Restless API manager.
+manager = flask_restless.APIManager(app, flask_sqlalchemy_db=db)
+
+# Create API endpoints, which will be available at /api/<tablename> by default
+manager.create_api(Product,
+                    methods=['GET', 'POST'],
+                    url_prefix='/api/v1/json', #product API now at /apy/v1/json/product
+                    results_per_page= -1, #<0 to disable pagination
+                    max_results_per_page= -1 #<0 to disable pagination
+                    )
+manager.create_api(Category,
+                    methods=['GET', 'POST'],
+                    url_prefix='/api/v2/json',#category API now at /apy/v2/json/category
+                    results_per_page= -1, #<0 to disable pagination
+                    max_results_per_page= -1 #<0 to disable pagination
+                    )
