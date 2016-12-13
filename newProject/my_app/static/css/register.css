@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Francois+One');
+
+.register-box {
+    padding-top: 20px;
+    margin-bottom: 70px;
+    height: 100%;
+    border: 3px solid cadetblue;
+    background-color: #F1F1F1;
+}
+
+.register-box p {
+    text-align: center;
+    font-family: 'Francois One', sans-serif;
+    font-size: 2em;
+
+}
+
+#register-form {
+    text-align: center;
+}
