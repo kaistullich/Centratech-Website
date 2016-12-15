@@ -17,7 +17,7 @@ my_view = Blueprint('my_view' , __name__)
 #5 CRITICAL - something failed application must close
 # i.e. level=logging.DEBUG
 
-logging.basicConfig(filename='logfile.log', format='\n%(asctime)s %(message)s', level=logging.DEBUG)
+#logging.basicConfig(filename='logfile.log', format='\n%(asctime)s %(message)s', level=logging.DEBUG)
 
 # formatting the output of the log
 def error_handling():
@@ -153,7 +153,7 @@ def register_page():
             username_query = cursor.execute("SELECT user_username FROM registered_users WHERE user_username = (?)", (username,))
             username_check = cursor.fetchall()
 
-            if int(len(username_check)) > 0:
+            if len(username_check) > 0:
                 flash("Sorry that username is already taken, please choose another!")
                 return render_template('register.html', form=form)
 
