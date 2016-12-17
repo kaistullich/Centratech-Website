@@ -152,9 +152,18 @@ def register_page():
 
             username_query = cursor.execute("SELECT user_username FROM registered_users WHERE user_username = (?)", (username,))
             username_check = cursor.fetchall()
+            print (username_check) # prints a list
+
+            email_query = cursor.execute("SELECT user_email FROM registered_users WHERE user_email = (?)", (email,))
+            email_check = cursor.fetchall()
+            print (email_check) # prints a list
 
             if len(username_check) > 0:
                 flash("Sorry that username is already taken, please choose another!")
+                return render_template('register.html', form=form)
+
+            if len(email_check) > 0:
+                flash('That email is already associated with another account, please use another!')
                 return render_template('register.html', form=form)
 
             else:
