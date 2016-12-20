@@ -10,14 +10,14 @@ from passlib.hash import sha256_crypt
 my_view = Blueprint('my_view' , __name__)
 
 # LOGGING LEVELS:
-#1 DEBUG = detailed info
-#2 INFO - confirmation that things according to plan
-#3 WARNING - something unexpected
-#4 ERROR - some function failed
-#5 CRITICAL - something failed application must close
+# 1 DEBUG = detailed info
+# 2 INFO - confirmation that things according to plan
+# 3 WARNING - something unexpected
+# 4 ERROR - some function failed
+# 5 CRITICAL - something failed application must close
 # i.e. level=logging.DEBUG
 
-#logging.basicConfig(filename='logfile.log', format='\n%(asctime)s %(message)s', level=logging.DEBUG)
+logging.basicConfig(filename='logfile.log', format='\n%(asctime)s %(message)s', level=logging.DEBUG)
 
 # formatting the output of the log
 def error_handling():

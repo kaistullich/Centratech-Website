@@ -87,13 +87,13 @@ manager = flask_restless.APIManager(app, flask_sqlalchemy_db=db)
 # Create API endpoints, which will be available at /api/<tablename> by default
 manager.create_api(Product,
                     methods=['GET', 'POST'],
-                    url_prefix='/api/v1/json', #product API now at /apy/v1/json/product
-                    results_per_page= -1, #<0 to disable pagination
-                    max_results_per_page= -1 #<0 to disable pagination
+                    url_prefix='/api/v1/json', # product API now at /api/v1/json/product
+                    results_per_page= -1, # < 0 to disable pagination
+                    max_results_per_page= -1 # < 0 to disable pagination
                     )
 manager.create_api(Category,
                     methods=['GET', 'POST'],
-                    url_prefix='/api/v2/json',#category API now at /apy/v2/json/category
-                    results_per_page= -1, #<0 to disable pagination
-                    max_results_per_page= -1 #<0 to disable pagination
+                    url_prefix='/api/v2/json',# category API now at /api/v2/json/category
+                    results_per_page= -1, # < 0 to disable pagination
+                    max_results_per_page= -1 # < 0 to disable pagination
                     )
