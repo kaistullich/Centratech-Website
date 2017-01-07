@@ -1,22 +1,23 @@
-from __future__ import print_function
 from flask import render_template, request, flash, redirect, url_for, session
 from my_app.source.models import cursor, conn
 
-#------------------------ SHOW ALL products-------------------
+
+# ------------------------ SHOW ALL products-------------------
 def products():
-    #selects all product.id,name,price and category.name
-	command = """SELECT {a}.id, {a}.brand, {a}.name, {a}.price, {b}.name, {a}.image
+    # selects all product.id,name,price and category.name
+    command = """SELECT {a}.id, {a}.brand, {a}.name, {a}.price, {b}.name, {a}.image
 	             FROM {a} 
                  JOIN {b} 
                  ON {a}.category_id = {b}.id
 	    """.format(a="product", b='category')
-	cursor.execute(command)
-	product_data = cursor.fetchall()
-	# takes 'command' and renders the template products.html
-	return render_template('products.html', my_list=product_data)
+    cursor.execute(command)
+    product_data = cursor.fetchall()
+    # takes 'command' and renders the template products.html
+    return render_template('products.html', my_list=product_data)
+
 
 # ------------------------SINGLE product ---------------------
-def product(key):    
+def product(key):
     # selects all columns shown
     command = """SELECT {a}.id, {a}.name, {a}.price, {b}.name, {a}.image, {a}.stock, {a}.description
                       FROM {a} 
@@ -26,17 +27,18 @@ def product(key):
         """.format(a="product", b='category', p1=key)
     cursor.execute(command)
     # fetches all the columns from the command variable
-    product_data = cursor.fetchall()  
+    product_data = cursor.fetchall()
     # if the len of product_data DB is too long it will show error 
     if len(product_data) == 0:
         flash('Key not found, please try again!')
-    item = product_data[0]    
+    item = product_data[0]
     # renders template to show a single product
     return render_template('product.html', single_product=item, key=key)
 
+
 # ------------------ PRODUCT SEARCHING ---------------------------
 # Product Search Function
-def product_search():  
+def product_search():
     # All the arguments 
     name = request.args.get('name')
     price = request.args.get('price')
@@ -50,64 +52,67 @@ def product_search():
     # Creates the argument for each varibale from above
     condition = ""
     if name != None:
-        condition += "product.name LIKE '%" +name+ "%'"
+        condition += "product.name LIKE '%" + name + "%'"
     if price != None:
-        if condition !="":
+        if condition != "":
             condition += " AND "
-        condition += "product.price=" +str(price)
+        condition += "product.price=" + str(price)
     if category != None:
         if condition != "":
             condition += " AND "
-        condition  += "category.name LIKE '%" +category+ "%'"
+        condition += "category.name LIKE '%" + category + "%'"
     if brand != None:
         if condition != "":
             condition += " AND "
-        condition  += "product.brand LIKE '%" +brand+ "%'"
+        condition += "product.brand LIKE '%" + brand + "%'"
     if price_greater_equal != None:
         if condition != "":
             condition += " AND "
-        condition  += "product.price >= " + str(price_greater_equal)
+        condition += "product.price >= " + str(price_greater_equal)
     if price_smaller_equal != None:
         if condition != "":
             condition += " AND "
-        condition  += "product.price <= " + str(price_smaller_equal) 
-            
-    # Creates the query from the DB
+        condition += "product.price <= " + str(price_smaller_equal)
+
+        # Creates the query from the DB
     if condition == "":
         command = """SELECT {a}.id, {a}.brand, {a}.name, {a}.price, {b}.name, {a}.image
                           FROM {a} 
                           JOIN {b} 
                           ON {a}.category_id = {b}.id
-            """.format(a="product", b='category')        
+            """.format(a="product", b='category')
     else:
         command = """SELECT {a}.id, {a}.brand, {a}.name, {a}.price, {b}.name, {a}.image
                           FROM {a} 
                           JOIN {b} 
                           ON {a}.category_id = {b}.id
                           WHERE {cond}
-            """.format(a="product", b='category', cond = condition)
+            """.format(a="product", b='category', cond=condition)
     # Executes either command depending on the search type
     cursor.execute(command)
     product_data = cursor.fetchall()
     # When user hits submit on search it will render template with the returned searches
     return render_template('products.html', my_list=product_data)
 
+
 # ------------------- SHOPPING CART ---------------------------
 
 def buildCondition(item_map):
-    if len( item_map ) == 1:
+    if len(item_map) == 1:
         return "product.id = {a}".format(a=str(item_map[0]['id']))
-    
+
     condition = "product.id = {a}".format(a=str(item_map[0]['id']))
     for item in item_map:
         condition += " OR product.id = {a}".format(a=str(item['id']))
     return condition
+
 
 def buildQuantityList(item_map):
     quantityList = []
     for item in item_map:
         quantityList.append(item['quantity'])
     return quantityList
+
 
 def addToCart(item_map):
     if len(item_map) > 0:

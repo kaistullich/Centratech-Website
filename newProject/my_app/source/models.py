@@ -15,4 +15,4 @@ class RegistrationForm(Form):
         validators.EqualTo('confirm', message='Passwords must match')
     ])
     confirm = PasswordField('Confirm Password:')
-    accept_tos = BooleanField('I accept the Terms of Service and Privacy', [validators.Required()])
+    accept_tos = BooleanField("I accept the Terms of Service and Privacy", [validators.Required()])
